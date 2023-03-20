@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="graduate_work.PageProfile"
+             Title="Профиль" 
+             IconImageSource="outline_face_white_24dp.png">
+    <StackLayout>
+        <Label x:Name="labelName"></Label>
+        <Label x:Name="labelPhone"></Label>
+        <Label x:Name="labelPassword"></Label>
+        <Label x:Name="labelSpecialist"></Label>
+    </StackLayout>
+</ContentPage>

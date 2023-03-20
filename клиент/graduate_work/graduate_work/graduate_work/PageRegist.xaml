@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="graduate_work.PageRegist"
+             xmlns:control="clr-namespace:Xamarin.Forms.MaskedEntry;assembly=Xamarin.Forms.MaskedEntry">
+    
+    <StackLayout VerticalOptions="Center"  HorizontalOptions="Center">
+        <Label Text="Регистрация" FontSize="30" FontAttributes="Bold" FontFamily="Roboto" 
+               TextColor="#5147AC" HorizontalOptions="Center" Margin="0,0,0,10"></Label>
+        <Entry x:Name="entryName" Placeholder="Имя" WidthRequest="300"></Entry>
+        <Label x:Name="errorName" TextColor="Red" FontFamily="Roboto"></Label>
+        <control:MaskedEntry x:Name="phoneEntry" Placeholder="Телефон" WidthRequest="300" 
+                             Mask="+7(XXX)XXX-XX-XX" Keyboard="Numeric" ></control:MaskedEntry>
+        <Label x:Name="errorPhone" TextColor="Red" FontFamily="Roboto"></Label>
+        <Entry x:Name="passwordEntry" Placeholder="Пароль" WidthRequest="300" IsPassword="true"
+               TextChanged="passwordEntryReturn_TextChanged"></Entry>
+        <Entry x:Name="passwordEntryReturn" Placeholder="Подтвердите пароль" WidthRequest="300" 
+                IsPassword="true" Margin="0,15,0,0" TextChanged="passwordEntryReturn_TextChanged"></Entry>
+        <Label x:Name="errorPassword" FontFamily="Roboto"></Label>
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Специалист" FontFamily="Roboto" FontSize="20"></Label>
+            <CheckBox x:Name="checkBoxSpecial" Color="#5147AC" Margin="0,0,0,10" ></CheckBox>
+        </StackLayout>
+        <Button x:Name="buttonRegist" Text="Зарегистрироваться" FontFamily="Roboto" FontSize="15"
+                BackgroundColor="#5147AC" TextColor="White" FontAttributes="Bold"
+                Clicked="buttonRegist_Clicked"></Button>
+    </StackLayout>
+</ContentPage>

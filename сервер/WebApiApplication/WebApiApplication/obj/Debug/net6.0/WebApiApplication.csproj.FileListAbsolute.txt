@@ -1,0 +1,175 @@
+D:\Code\C#\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\appsettings.Development.json
+D:\Code\C#\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\appsettings.json
+D:\Code\C#\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\WebApiApplication.exe
+D:\Code\C#\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\WebApiApplication.deps.json
+D:\Code\C#\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\WebApiApplication.runtimeconfig.json
+D:\Code\C#\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\WebApiApplication.dll
+D:\Code\C#\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\WebApiApplication.pdb
+D:\Code\C#\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\Microsoft.OpenApi.dll
+D:\Code\C#\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\Code\C#\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\Code\C#\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\Code\C#\дипломная_сервер\WebApiApplication\WebApiApplication\obj\Debug\net6.0\WebApiApplication.csproj.AssemblyReference.cache
+D:\Code\C#\дипломная_сервер\WebApiApplication\WebApiApplication\obj\Debug\net6.0\WebApiApplication.GeneratedMSBuildEditorConfig.editorconfig
+D:\Code\C#\дипломная_сервер\WebApiApplication\WebApiApplication\obj\Debug\net6.0\WebApiApplication.AssemblyInfoInputs.cache
+D:\Code\C#\дипломная_сервер\WebApiApplication\WebApiApplication\obj\Debug\net6.0\WebApiApplication.AssemblyInfo.cs
+D:\Code\C#\дипломная_сервер\WebApiApplication\WebApiApplication\obj\Debug\net6.0\WebApiApplication.csproj.CoreCompileInputs.cache
+D:\Code\C#\дипломная_сервер\WebApiApplication\WebApiApplication\obj\Debug\net6.0\WebApiApplication.MvcApplicationPartsAssemblyInfo.cs
+D:\Code\C#\дипломная_сервер\WebApiApplication\WebApiApplication\obj\Debug\net6.0\WebApiApplication.MvcApplicationPartsAssemblyInfo.cache
+D:\Code\C#\дипломная_сервер\WebApiApplication\WebApiApplication\obj\Debug\net6.0\staticwebassets\msbuild.WebApiApplication.Microsoft.AspNetCore.StaticWebAssets.props
+D:\Code\C#\дипломная_сервер\WebApiApplication\WebApiApplication\obj\Debug\net6.0\staticwebassets\msbuild.build.WebApiApplication.props
+D:\Code\C#\дипломная_сервер\WebApiApplication\WebApiApplication\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.WebApiApplication.props
+D:\Code\C#\дипломная_сервер\WebApiApplication\WebApiApplication\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.WebApiApplication.props
+D:\Code\C#\дипломная_сервер\WebApiApplication\WebApiApplication\obj\Debug\net6.0\staticwebassets.pack.json
+D:\Code\C#\дипломная_сервер\WebApiApplication\WebApiApplication\obj\Debug\net6.0\staticwebassets.build.json
+D:\Code\C#\дипломная_сервер\WebApiApplication\WebApiApplication\obj\Debug\net6.0\staticwebassets.development.json
+D:\Code\C#\дипломная_сервер\WebApiApplication\WebApiApplication\obj\Debug\net6.0\scopedcss\bundle\WebApiApplication.styles.css
+D:\Code\C#\дипломная_сервер\WebApiApplication\WebApiApplication\obj\Debug\net6.0\WebApiApplication.csproj.CopyComplete
+D:\Code\C#\дипломная_сервер\WebApiApplication\WebApiApplication\obj\Debug\net6.0\WebApiApplication.dll
+D:\Code\C#\дипломная_сервер\WebApiApplication\WebApiApplication\obj\Debug\net6.0\refint\WebApiApplication.dll
+D:\Code\C#\дипломная_сервер\WebApiApplication\WebApiApplication\obj\Debug\net6.0\WebApiApplication.pdb
+D:\Code\C#\дипломная_сервер\WebApiApplication\WebApiApplication\obj\Debug\net6.0\WebApiApplication.genruntimeconfig.cache
+D:\Code\C#\дипломная_сервер\WebApiApplication\WebApiApplication\obj\Debug\net6.0\ref\WebApiApplication.dll
+D:\Code\C#\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\Azure.Core.dll
+D:\Code\C#\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\Azure.Identity.dll
+D:\Code\C#\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\Humanizer.dll
+D:\Code\C#\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Code\C#\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
+D:\Code\C#\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+D:\Code\C#\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\Code\C#\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\Code\C#\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\Code\C#\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\Code\C#\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\Microsoft.Extensions.Caching.Abstractions.dll
+D:\Code\C#\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+D:\Code\C#\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\Code\C#\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+D:\Code\C#\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Code\C#\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+D:\Code\C#\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\Microsoft.Extensions.Logging.dll
+D:\Code\C#\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\Code\C#\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
+D:\Code\C#\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
+D:\Code\C#\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\Microsoft.Identity.Client.dll
+D:\Code\C#\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\Microsoft.Identity.Client.Extensions.Msal.dll
+D:\Code\C#\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+D:\Code\C#\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\Code\C#\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+D:\Code\C#\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+D:\Code\C#\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\Code\C#\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+D:\Code\C#\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\Microsoft.SqlServer.Server.dll
+D:\Code\C#\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\Code\C#\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\Mono.TextTemplating.dll
+D:\Code\C#\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\System.CodeDom.dll
+D:\Code\C#\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+D:\Code\C#\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\System.Drawing.Common.dll
+D:\Code\C#\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+D:\Code\C#\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\System.Memory.Data.dll
+D:\Code\C#\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\System.Runtime.Caching.dll
+D:\Code\C#\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+D:\Code\C#\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\System.Security.Permissions.dll
+D:\Code\C#\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\System.Text.Encodings.Web.dll
+D:\Code\C#\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\System.Text.Json.dll
+D:\Code\C#\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\System.Windows.Extensions.dll
+D:\Code\C#\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\Code\C#\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\Code\C#\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Code\C#\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Code\C#\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Code\C#\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Code\C#\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+D:\Code\C#\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+D:\Code\C#\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+D:\Code\C#\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+D:\Code\C#\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+D:\Code\C#\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+D:\Code\C#\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+D:\Code\Новая папка\My_projects\Диплом\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\appsettings.Development.json
+D:\Code\Новая папка\My_projects\Диплом\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\appsettings.json
+D:\Code\Новая папка\My_projects\Диплом\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\WebApiApplication.exe
+D:\Code\Новая папка\My_projects\Диплом\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\WebApiApplication.deps.json
+D:\Code\Новая папка\My_projects\Диплом\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\WebApiApplication.runtimeconfig.json
+D:\Code\Новая папка\My_projects\Диплом\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\WebApiApplication.dll
+D:\Code\Новая папка\My_projects\Диплом\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\WebApiApplication.pdb
+D:\Code\Новая папка\My_projects\Диплом\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\Azure.Core.dll
+D:\Code\Новая папка\My_projects\Диплом\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\Azure.Identity.dll
+D:\Code\Новая папка\My_projects\Диплом\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\Humanizer.dll
+D:\Code\Новая папка\My_projects\Диплом\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Code\Новая папка\My_projects\Диплом\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
+D:\Code\Новая папка\My_projects\Диплом\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+D:\Code\Новая папка\My_projects\Диплом\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\Code\Новая папка\My_projects\Диплом\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\Code\Новая папка\My_projects\Диплом\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\Code\Новая папка\My_projects\Диплом\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\Code\Новая папка\My_projects\Диплом\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\Microsoft.Extensions.Caching.Abstractions.dll
+D:\Code\Новая папка\My_projects\Диплом\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+D:\Code\Новая папка\My_projects\Диплом\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\Code\Новая папка\My_projects\Диплом\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+D:\Code\Новая папка\My_projects\Диплом\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Code\Новая папка\My_projects\Диплом\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+D:\Code\Новая папка\My_projects\Диплом\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\Microsoft.Extensions.Logging.dll
+D:\Code\Новая папка\My_projects\Диплом\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\Code\Новая папка\My_projects\Диплом\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
+D:\Code\Новая папка\My_projects\Диплом\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
+D:\Code\Новая папка\My_projects\Диплом\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\Microsoft.Identity.Client.dll
+D:\Code\Новая папка\My_projects\Диплом\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\Microsoft.Identity.Client.Extensions.Msal.dll
+D:\Code\Новая папка\My_projects\Диплом\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+D:\Code\Новая папка\My_projects\Диплом\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\Code\Новая папка\My_projects\Диплом\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+D:\Code\Новая папка\My_projects\Диплом\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+D:\Code\Новая папка\My_projects\Диплом\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\Code\Новая папка\My_projects\Диплом\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+D:\Code\Новая папка\My_projects\Диплом\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\Microsoft.OpenApi.dll
+D:\Code\Новая папка\My_projects\Диплом\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\Microsoft.SqlServer.Server.dll
+D:\Code\Новая папка\My_projects\Диплом\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\Code\Новая папка\My_projects\Диплом\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\Mono.TextTemplating.dll
+D:\Code\Новая папка\My_projects\Диплом\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\Newtonsoft.Json.dll
+D:\Code\Новая папка\My_projects\Диплом\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\Code\Новая папка\My_projects\Диплом\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\Code\Новая папка\My_projects\Диплом\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\Code\Новая папка\My_projects\Диплом\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\System.CodeDom.dll
+D:\Code\Новая папка\My_projects\Диплом\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+D:\Code\Новая папка\My_projects\Диплом\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\System.Drawing.Common.dll
+D:\Code\Новая папка\My_projects\Диплом\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+D:\Code\Новая папка\My_projects\Диплом\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\System.Memory.Data.dll
+D:\Code\Новая папка\My_projects\Диплом\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\System.Runtime.Caching.dll
+D:\Code\Новая папка\My_projects\Диплом\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+D:\Code\Новая папка\My_projects\Диплом\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\System.Security.Permissions.dll
+D:\Code\Новая папка\My_projects\Диплом\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\System.Text.Encodings.Web.dll
+D:\Code\Новая папка\My_projects\Диплом\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\System.Text.Json.dll
+D:\Code\Новая папка\My_projects\Диплом\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\System.Windows.Extensions.dll
+D:\Code\Новая папка\My_projects\Диплом\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\Code\Новая папка\My_projects\Диплом\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\Code\Новая папка\My_projects\Диплом\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Code\Новая папка\My_projects\Диплом\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Code\Новая папка\My_projects\Диплом\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Code\Новая папка\My_projects\Диплом\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Code\Новая папка\My_projects\Диплом\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+D:\Code\Новая папка\My_projects\Диплом\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+D:\Code\Новая папка\My_projects\Диплом\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+D:\Code\Новая папка\My_projects\Диплом\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+D:\Code\Новая папка\My_projects\Диплом\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+D:\Code\Новая папка\My_projects\Диплом\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+D:\Code\Новая папка\My_projects\Диплом\дипломная_сервер\WebApiApplication\WebApiApplication\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+D:\Code\Новая папка\My_projects\Диплом\дипломная_сервер\WebApiApplication\WebApiApplication\obj\Debug\net6.0\WebApiApplication.csproj.AssemblyReference.cache
+D:\Code\Новая папка\My_projects\Диплом\дипломная_сервер\WebApiApplication\WebApiApplication\obj\Debug\net6.0\WebApiApplication.GeneratedMSBuildEditorConfig.editorconfig
+D:\Code\Новая папка\My_projects\Диплом\дипломная_сервер\WebApiApplication\WebApiApplication\obj\Debug\net6.0\WebApiApplication.AssemblyInfoInputs.cache
+D:\Code\Новая папка\My_projects\Диплом\дипломная_сервер\WebApiApplication\WebApiApplication\obj\Debug\net6.0\WebApiApplication.AssemblyInfo.cs
+D:\Code\Новая папка\My_projects\Диплом\дипломная_сервер\WebApiApplication\WebApiApplication\obj\Debug\net6.0\WebApiApplication.csproj.CoreCompileInputs.cache
+D:\Code\Новая папка\My_projects\Диплом\дипломная_сервер\WebApiApplication\WebApiApplication\obj\Debug\net6.0\WebApiApplication.MvcApplicationPartsAssemblyInfo.cs
+D:\Code\Новая папка\My_projects\Диплом\дипломная_сервер\WebApiApplication\WebApiApplication\obj\Debug\net6.0\WebApiApplication.MvcApplicationPartsAssemblyInfo.cache
+D:\Code\Новая папка\My_projects\Диплом\дипломная_сервер\WebApiApplication\WebApiApplication\obj\Debug\net6.0\staticwebassets\msbuild.WebApiApplication.Microsoft.AspNetCore.StaticWebAssets.props
+D:\Code\Новая папка\My_projects\Диплом\дипломная_сервер\WebApiApplication\WebApiApplication\obj\Debug\net6.0\staticwebassets\msbuild.build.WebApiApplication.props
+D:\Code\Новая папка\My_projects\Диплом\дипломная_сервер\WebApiApplication\WebApiApplication\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.WebApiApplication.props
+D:\Code\Новая папка\My_projects\Диплом\дипломная_сервер\WebApiApplication\WebApiApplication\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.WebApiApplication.props
+D:\Code\Новая папка\My_projects\Диплом\дипломная_сервер\WebApiApplication\WebApiApplication\obj\Debug\net6.0\staticwebassets.pack.json
+D:\Code\Новая папка\My_projects\Диплом\дипломная_сервер\WebApiApplication\WebApiApplication\obj\Debug\net6.0\staticwebassets.build.json
+D:\Code\Новая папка\My_projects\Диплом\дипломная_сервер\WebApiApplication\WebApiApplication\obj\Debug\net6.0\staticwebassets.development.json
+D:\Code\Новая папка\My_projects\Диплом\дипломная_сервер\WebApiApplication\WebApiApplication\obj\Debug\net6.0\scopedcss\bundle\WebApiApplication.styles.css
+D:\Code\Новая папка\My_projects\Диплом\дипломная_сервер\WebApiApplication\WebApiApplication\obj\Debug\net6.0\WebApiApplication.csproj.CopyComplete
+D:\Code\Новая папка\My_projects\Диплом\дипломная_сервер\WebApiApplication\WebApiApplication\obj\Debug\net6.0\WebApiApplication.dll
+D:\Code\Новая папка\My_projects\Диплом\дипломная_сервер\WebApiApplication\WebApiApplication\obj\Debug\net6.0\refint\WebApiApplication.dll
+D:\Code\Новая папка\My_projects\Диплом\дипломная_сервер\WebApiApplication\WebApiApplication\obj\Debug\net6.0\WebApiApplication.pdb
+D:\Code\Новая папка\My_projects\Диплом\дипломная_сервер\WebApiApplication\WebApiApplication\obj\Debug\net6.0\WebApiApplication.genruntimeconfig.cache
+D:\Code\Новая папка\My_projects\Диплом\дипломная_сервер\WebApiApplication\WebApiApplication\obj\Debug\net6.0\ref\WebApiApplication.dll

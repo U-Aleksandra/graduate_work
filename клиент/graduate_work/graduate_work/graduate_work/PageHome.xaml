@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="graduate_work.PageHome"
+             IconImageSource="outline_home_white_24dp.png"
+             Title="Главная">
+    <ScrollView>
+        <StackLayout>
+            <Image Source="background.jpg"/>
+            <Label Text="Категории  9" FontFamily="Roboto" TextColor="#5147AC" FontSize="20" Margin="20,0,0,0" VerticalOptions="Center"></Label>
+            <ScrollView Orientation="Horizontal">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="170"/>
+                        <ColumnDefinition Width="170"/>
+                        <ColumnDefinition Width="170"/>
+                        <ColumnDefinition Width="170"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <ImageButton Source="logoNogti.jpg" Grid.Column="0" Grid.Row="0"/>
+                    <ImageButton Source="logoMakeup.jpg" Grid.Column="0" Grid.Row="1"/>
+
+                    <ImageButton Source="logoHear.jpg" Grid.Column="1" Grid.Row="0"/>
+                    <ImageButton Source="logoBrovi.jpg" Grid.Column="1" Grid.Row="1"/>
+
+                    <ImageButton Source="logoResnicy.jpg" Grid.Column="2" Grid.Row="0"/>
+                    <ImageButton Source="logoDepilaciya.jpg" Grid.Column="2" Grid.Row="1"/>
+
+                    <ImageButton Source="logoKosmetologiya.jpg" Grid.Column="3" Grid.Row="0"/>
+                    <ImageButton Source="logoMassag.jpg" Grid.Column="3" Grid.Row="1"/>
+                </Grid>
+            </ScrollView>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

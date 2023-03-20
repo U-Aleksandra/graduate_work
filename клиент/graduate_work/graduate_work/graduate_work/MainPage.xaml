@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="graduate_work.MainPage">
+    <StackLayout  VerticalOptions="Center">
+
+        <Button x:Name="buttonInput" Text="Вход" BackgroundColor="#5147AC" TextColor="#FFFFFF" FontAttributes="Bold" WidthRequest="300" 
+            HorizontalOptions="Center" HeightRequest="60" FontSize="20" FontFamily="Roboto" 
+                Clicked="buttonInput_Clicked"></Button>
+        <Button x:Name="buttonRegist" Text="Регистрация" BackgroundColor="#5147AC" TextColor="#FFFFFF" FontAttributes="Bold" WidthRequest="300" 
+            HorizontalOptions="Center" HeightRequest="60" Margin="0,15,0,0"  FontSize="20" FontFamily="Roboto" 
+                Clicked="buttonRegist_Clicked"></Button>
+    
+    </StackLayout>
+</ContentPage>
