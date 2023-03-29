@@ -1,0 +1,36 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Text.Json.Serialization;
+using static Xamarin.Essentials.Permissions;
+
+namespace graduate_work.Models
+{
+    [Serializable]
+    internal class Specialist : User
+    {
+
+        [JsonPropertyName("category")]
+        public string Category { get; set; }
+
+        [JsonPropertyName("address")]
+        public string Address { get; set; }
+
+        [JsonPropertyName("description")]
+        public string Description { get; set; }
+
+        [System.Text.Json.Serialization.JsonConstructor]
+        public Specialist(string name, string phone, string password, bool isSpecialist, string category, string address, string description = null) : base(name, phone, password, isSpecialist)
+        {
+            Name = name;
+            Phone = phone;
+            Password = password;
+            this.isSpecialist = isSpecialist;
+            Category = category;
+            Address = address;
+            Description = description;
+        }
+    }
+
+    
+}

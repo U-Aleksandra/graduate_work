@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "UdDpwIUuP9PxDJljfAA8fcNXC/xLYUbgm0/TNsNqHn1Fvf/m2AIgOlD/+Pz3k/g8if70Y4Qy5Tv0ZvuAyzS2cQ==",
+  "dgSpecHash": "KwpiLTOjONBIQ94257Qn2ROFpNw8vvHstTQnlEekC2JUKbgN6EerUsvfRvy+F3VZzoPh8qfE/W9u9FQqEIW+jw==",
   "success": true,
-  "projectFilePath": "D:\\Code\\C#\\дипломная_клиент\\graduate_work\\graduate_work\\graduate_work.Android\\graduate_work.Android.csproj",
+  "projectFilePath": "D:\\Code\\C#\\graduate_work\\клиент\\graduate_work\\graduate_work\\graduate_work.Android\\graduate_work.Android.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\sushk\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\7.0.0\\microsoft.bcl.asyncinterfaces.7.0.0.nupkg.sha512",
     "C:\\Users\\sushk\\.nuget\\packages\\newtonsoft.json\\13.0.2\\newtonsoft.json.13.0.2.nupkg.sha512",

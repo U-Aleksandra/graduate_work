@@ -19,7 +19,7 @@ namespace graduate_work
             labelName.Text = user.Name;
             labelPhone.Text = user.Phone;
             labelPassword.Text = user.Password;
-            labelSpecialist.Text = user.Specialist.ToString();
+            labelSpecialist.Text = user.isSpecialist.ToString();
         }
     }
 }

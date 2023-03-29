@@ -29,6 +29,7 @@ namespace graduate_work
 			InitializeComponent ();
 		}
 
+        [Obsolete]
         private async void buttonRegist_Clicked(object sender, EventArgs e)
         {
 
@@ -69,21 +70,26 @@ namespace graduate_work
 
             if (_nameIsValid && _phoneIsValid && _passwordIsValid)
             {
-                JsonContent content = JsonContent.Create(new User(entryName.Text, phoneEntry.Text, passwordEntry.Text, checkBoxSpecial.IsChecked));
-                var response = await apiConfig.client.PostAsync(url, content);
-                string result = await response.Content.ReadAsStringAsync();
-
-                if (response.StatusCode == HttpStatusCode.OK)
+                if (checkBoxSpecial.IsChecked == false)
                 {
-                    await DisplayAlert("Результат", result, "Ok");
-                    if (checkBoxSpecial.IsChecked)
-                        await Navigation.PushAsync(new PageRegistSpecialist());
+                    JsonContent content = JsonContent.Create(new User(entryName.Text, phoneEntry.Text, passwordEntry.Text, checkBoxSpecial.IsChecked));
+                    var response = await apiConfig.client.PostAsync(url, content);
+                    string result = await response.Content.ReadAsStringAsync();
+                    User user = System.Text.Json.JsonSerializer.Deserialize<User>(result);
+
+                    if (response.StatusCode == HttpStatusCode.OK)
+                    {
+                        await Navigation.PushModalAsync(new NavigationPage(new PageTabbed(user)));
+                    }
                     else
-                        await Navigation.PushAsync(new PageRegistSpecialist());
+                    {
+                        await DisplayAlert("Результат", result, "Ok");
+                    }
                 }
                 else
                 {
-                    await DisplayAlert("Результат", result, "Ok");
+                    User user = new User(entryName.Text, phoneEntry.Text, passwordEntry.Text, checkBoxSpecial.IsChecked);
+                    await Navigation.PushAsync(new PageRegistSpecialist(user));
                 }
             }
 

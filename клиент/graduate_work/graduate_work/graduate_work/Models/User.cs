@@ -21,17 +21,17 @@ namespace graduate_work.Models
         [JsonPropertyName("password")]
         public string Password { get; set; }
 
-        [JsonPropertyName("specialist")]
-        public bool Specialist { get; set; }
+        [JsonPropertyName("isSpecialist")]
+        public bool isSpecialist { get; set; }
 
         [System.Text.Json.Serialization.JsonConstructor]
-        public User(int id, string name, string phone, string password, bool specialist)
+        public User(int id, string name, string phone, string password, bool isSpecialist)
         {
             Id = id;
             Name = name;
             Phone = phone;
             Password = password;
-            Specialist = specialist;
+            this.isSpecialist = isSpecialist;
         }
         public User(string name, string phoneNumber, string password, bool isSpecialist)
         {
@@ -39,7 +39,7 @@ namespace graduate_work.Models
             Name = name;
             Phone = phoneNumber;
             Password = password;
-            this.Specialist = isSpecialist;
+            this.isSpecialist = isSpecialist;
         }
 
         public User(string phoneNumber, string password)
@@ -47,5 +47,6 @@ namespace graduate_work.Models
             Phone = phoneNumber;
             Password = password;
         }
+
     }
 }
