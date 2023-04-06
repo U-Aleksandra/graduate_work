@@ -20,6 +20,10 @@ namespace graduate_work
             labelPhone.Text = user.Phone;
             labelPassword.Text = user.Password;
             labelSpecialist.Text = user.isSpecialist.ToString();
+            if(user is Specialist specialist)
+            {
+                labelCategory.Text = specialist.Category;
+            }
         }
     }
 }

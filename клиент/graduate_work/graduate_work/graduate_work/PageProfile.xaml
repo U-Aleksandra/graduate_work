@@ -9,5 +9,6 @@
         <Label x:Name="labelPhone"></Label>
         <Label x:Name="labelPassword"></Label>
         <Label x:Name="labelSpecialist"></Label>
+        <Label x:Name="labelCategory"></Label>
     </StackLayout>
 </ContentPage>

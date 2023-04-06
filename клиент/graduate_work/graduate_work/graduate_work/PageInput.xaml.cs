@@ -67,11 +67,16 @@ namespace graduate_work
                 JsonContent content = JsonContent.Create(new User(phoneEntry.Text, passwordEntry.Text));
                 var response = await apiConfig.client.PostAsync(url, content);
                 var result = await response.Content.ReadAsStringAsync();
-                User user = System.Text.Json.JsonSerializer.Deserialize<User>(result);
 
                 if (response.StatusCode == HttpStatusCode.OK) 
                 {
-                    await Navigation.PushModalAsync(new NavigationPage(new PageTabbed(user)));
+                    User user = System.Text.Json.JsonSerializer.Deserialize<User>(result);
+                    if (user.isSpecialist)
+                    {
+                        Specialist specialist = System.Text.Json.JsonSerializer.Deserialize<Specialist>(result);
+                        await Navigation.PushModalAsync(new NavigationPage(new PageTabbed(specialist)));
+                    }
+                    else await Navigation.PushModalAsync(new NavigationPage(new PageTabbed(user)));
                 }
                 else
                     await DisplayAlert("Результат", result, "Ok");

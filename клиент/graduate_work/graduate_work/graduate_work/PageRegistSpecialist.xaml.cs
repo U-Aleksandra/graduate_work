@@ -57,10 +57,10 @@ namespace graduate_work
 				JsonContent content = JsonContent.Create(new Specialist(localUser.Name, localUser.Phone, localUser.Password, localUser.isSpecialist, pickerActivity.Items[pickerActivity.SelectedIndex], entryAdress.Text));
                 var response = await apiConfig.client.PostAsync(url, content);
                 string result = await response.Content.ReadAsStringAsync();
-                Specialist specialist = System.Text.Json.JsonSerializer.Deserialize<Specialist>(result);
 
                 if (response.StatusCode == HttpStatusCode.OK)
                 {
+                    Specialist specialist = System.Text.Json.JsonSerializer.Deserialize<Specialist>(result);
                     await Navigation.PushModalAsync(new NavigationPage(new PageTabbed(specialist)));
 
                 }

@@ -75,10 +75,10 @@ namespace graduate_work
                     JsonContent content = JsonContent.Create(new User(entryName.Text, phoneEntry.Text, passwordEntry.Text, checkBoxSpecial.IsChecked));
                     var response = await apiConfig.client.PostAsync(url, content);
                     string result = await response.Content.ReadAsStringAsync();
-                    User user = System.Text.Json.JsonSerializer.Deserialize<User>(result);
 
                     if (response.StatusCode == HttpStatusCode.OK)
                     {
+                        User user = System.Text.Json.JsonSerializer.Deserialize<User>(result);
                         await Navigation.PushModalAsync(new NavigationPage(new PageTabbed(user)));
                     }
                     else

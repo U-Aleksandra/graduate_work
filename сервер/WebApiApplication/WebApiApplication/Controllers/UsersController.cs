@@ -67,6 +67,13 @@ namespace WebApiApplication.Controllers
                 User? searchUser = await _adp.Users.FirstOrDefaultAsync(u => u.Phone == user.Phone && u.Password == user.Password);
                 if (searchUser != null)
                 {
+                    if (searchUser.isSpecialist)
+                    {
+                        if(searchUser is Specialist specialist)
+                        {
+                            return Ok(specialist);
+                        }
+                    }
                     return Ok(searchUser);
                 }
                 return BadRequest("Данный пользователь не зарегистрирован в системе");
@@ -76,7 +83,7 @@ namespace WebApiApplication.Controllers
 
         // PUT api/<ValuesController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string name)
+        public void Put(int id, string name)
         {
             User user = _adp.Users.Find(id);
             user.Name = name;
