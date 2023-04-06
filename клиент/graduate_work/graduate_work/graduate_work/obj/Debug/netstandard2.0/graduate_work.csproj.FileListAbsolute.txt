@@ -42,3 +42,4 @@ D:\Code\C#\graduate_work\клиент\graduate_work\graduate_work\graduate_work\
 D:\Code\C#\graduate_work\клиент\graduate_work\graduate_work\graduate_work\obj\Debug\netstandard2.0\refint\graduate_work.dll
 D:\Code\C#\graduate_work\клиент\graduate_work\graduate_work\graduate_work\obj\Debug\netstandard2.0\graduate_work.pdb
 D:\Code\C#\graduate_work\клиент\graduate_work\graduate_work\graduate_work\obj\Debug\netstandard2.0\ref\graduate_work.dll
+D:\Code\C#\graduate_work\клиент\graduate_work\graduate_work\graduate_work\obj\Debug\netstandard2.0\PageEditProfile.xaml.g.cs

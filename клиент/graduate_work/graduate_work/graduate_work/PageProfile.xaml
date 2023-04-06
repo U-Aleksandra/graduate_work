@@ -4,11 +4,10 @@
              x:Class="graduate_work.PageProfile"
              Title="Профиль" 
              IconImageSource="outline_face_white_24dp.png">
-    <StackLayout>
-        <Label x:Name="labelName"></Label>
-        <Label x:Name="labelPhone"></Label>
-        <Label x:Name="labelPassword"></Label>
-        <Label x:Name="labelSpecialist"></Label>
-        <Label x:Name="labelCategory"></Label>
-    </StackLayout>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Изменить"
+                 Order="Primary"
+                 Priority="0" 
+                 Clicked="edidProfileClicked"/>
+    </ContentPage.ToolbarItems>
 </ContentPage>
