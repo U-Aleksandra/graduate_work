@@ -69,7 +69,7 @@ namespace WebApiApplication.Controllers
                 {
                     if (searchUser.isSpecialist)
                     {
-                        if(searchUser is Specialist specialist)
+                        if (searchUser is Specialist specialist)
                         {
                             return Ok(specialist);
                         }
@@ -82,12 +82,25 @@ namespace WebApiApplication.Controllers
         }
 
         // PUT api/<ValuesController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, string name)
+        [HttpPut]
+        public async Task<IActionResult> Put(User user)
         {
-            User user = _adp.Users.Find(id);
-            user.Name = name;
-            _adp.SaveChanges();
+            User outdatedUser = await _adp.Users.Where(u => u.Id == user.Id).FirstOrDefaultAsync();
+            if (outdatedUser != null)
+            {
+                if (user.Equals(outdatedUser))
+                {
+                    return BadRequest("Данные не были изменены");
+                }
+                else
+                {
+                    outdatedUser.Name = user.Name;
+                    outdatedUser.Phone = user.Phone;
+                    _adp.SaveChanges();
+                    return Ok("Изменения сохранены");
+                }
+            }
+           else return NotFound();
         }
 
         // DELETE api/<ValuesController>/5

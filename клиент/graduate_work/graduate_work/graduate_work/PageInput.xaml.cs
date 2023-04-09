@@ -74,9 +74,14 @@ namespace graduate_work
                     if (user.isSpecialist)
                     {
                         Specialist specialist = System.Text.Json.JsonSerializer.Deserialize<Specialist>(result);
+                        Navigation.RemovePage(this);
                         await Navigation.PushModalAsync(new NavigationPage(new PageTabbed(specialist)));
                     }
-                    else await Navigation.PushModalAsync(new NavigationPage(new PageTabbed(user)));
+                    else
+                    {
+                        Navigation.RemovePage(this);
+                        await Navigation.PushModalAsync(new NavigationPage(new PageTabbed(user)));
+                    }
                 }
                 else
                     await DisplayAlert("Результат", result, "Ok");

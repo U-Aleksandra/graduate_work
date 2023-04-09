@@ -2,6 +2,7 @@
 using System.Runtime.CompilerServices;
 using WebApiApplication.Models;
 using Microsoft.EntityFrameworkCore;
+using System.Net;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -47,14 +48,31 @@ namespace WebApiApplication.Controllers
             return users;
         }
 
-        // GET api/<ValuesController>/5
-        /*[HttpGet("{id}")]
-        public User Get(int id)
+        [HttpPut]
+        public async Task<IActionResult> Put(Specialist specialist)
         {
-            return _adp.Specialists.FirstOrDefault(s => s.Id == id).User;
-            *//*int idUser = _adp.Specialists.Find(id).userId;
-            return _adp.Users.Find(idUser).Name;*//*
-
-        }*/
+            if (specialist.isSpecialist)
+            {
+                Specialist outdatedSpecialist = await _adp.Specialists.Where(s => s.Id == specialist.Id).FirstOrDefaultAsync();
+                if (outdatedSpecialist != null)
+                {
+                    if (Equals(outdatedSpecialist, specialist))
+                    {
+                        return BadRequest("Данные не были изменены");
+                    }
+                    else
+                    {
+                        outdatedSpecialist.Name = specialist.Name;
+                        outdatedSpecialist.Phone = specialist.Phone;
+                        outdatedSpecialist.Description = specialist.Description;
+                        outdatedSpecialist.Address = specialist.Address;
+                        _adp.SaveChanges();
+                        return Ok("Изменения сохранены");
+                    }
+                }
+                else return NotFound();
+            }
+           else return StatusCode((int)HttpStatusCode.Forbidden);
+        }
     }
 }

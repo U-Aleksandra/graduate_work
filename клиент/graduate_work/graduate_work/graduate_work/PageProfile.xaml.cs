@@ -16,11 +16,10 @@ namespace graduate_work
         private User localUser;
         public PageProfile(User user)
         {
-            localUser = user;
-
             InitializeComponent();
             if (user is Specialist specialist)
             {
+                localUser = specialist;
                 Content = new StackLayout
                 {
                     Margin = new Thickness(10, 0, 10, 0),
@@ -54,6 +53,7 @@ namespace graduate_work
             }
             else
             {
+                localUser = user;
                 Content = new StackLayout
                 {
                     Margin = new Thickness(10, 0, 10, 0),
