@@ -20,7 +20,7 @@ namespace graduate_work.Models
         public string Description { get; set; }
 
         [System.Text.Json.Serialization.JsonConstructor]
-        public Specialist(string name, string phone, string password, bool isSpecialist, string category, string address, string description = null) : base(name, phone, password, isSpecialist)
+        public Specialist(string name, string phone, string password, bool isSpecialist, string category, string address, string description = "Напишите несколько слов о себе") : base(name, phone, password, isSpecialist)
         {
             Name = name;
             Phone = phone;

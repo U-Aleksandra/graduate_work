@@ -88,17 +88,10 @@ namespace WebApiApplication.Controllers
             User outdatedUser = await _adp.Users.Where(u => u.Id == user.Id).FirstOrDefaultAsync();
             if (outdatedUser != null)
             {
-                if (user.Equals(outdatedUser))
-                {
-                    return BadRequest("Данные не были изменены");
-                }
-                else
-                {
-                    outdatedUser.Name = user.Name;
-                    outdatedUser.Phone = user.Phone;
-                    _adp.SaveChanges();
-                    return Ok("Изменения сохранены");
-                }
+                outdatedUser.Name = user.Name;
+                outdatedUser.Phone = user.Phone;
+                _adp.SaveChanges();
+                return Ok("Изменения сохранены");
             }
            else return NotFound();
         }

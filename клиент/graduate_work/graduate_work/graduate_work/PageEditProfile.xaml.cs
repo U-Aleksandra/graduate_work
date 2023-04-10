@@ -103,7 +103,6 @@ namespace graduate_work
             else
             {
                 _nameIsValid = true;
-                localUser.Name = entryName.Text;
                 errorName.Text = string.Empty;
             }
 
@@ -115,7 +114,6 @@ namespace graduate_work
             else
             {
                 _phoneIsValid = true;
-                localUser.Phone = entryPhone.Text;
                 errorPhone.Text = string.Empty;
             }
 
@@ -129,23 +127,67 @@ namespace graduate_work
                 else
                 {
                     _addressIsValid = true;
-                    specialist.Address = entryAddress.Text;
                     errorAddress.Text = string.Empty;
                 }
-                specialist.Description = entryDescription.Text;
-                JsonContent content = JsonContent.Create(specialist);
-                var response = await apiConfig.client.PutAsync(urlspecialist, content);
-                string result = await response.Content.ReadAsStringAsync();
-                await DisplayAlert("Результат", result, "Ok");
-                await Navigation.PushModalAsync(new NavigationPage(new PageTabbed(specialist)));
+
+                if (_nameIsValid && _phoneIsValid && _addressIsValid)
+                {
+                    if (entryName.Text.Equals(localUser.Name) && entryPhone.Text.Equals(localUser.Phone) 
+                        && entryAddress.Text.Equals(specialist.Address) && entryDescription.Text.Equals(specialist.Description))
+                    {
+                        await DisplayAlert("Результат", "Данные не были изменены", "Ok");
+                    }
+                    else
+                    {
+                        if (!entryPhone.Text.Equals(localUser.Phone))
+                        {
+                            await DisplayAlert("Внимание!", "Номер телефона изменен! Теперь вход будет осуществляться по номеру телефона: " + entryPhone.Text, "Ok");
+                        }
+
+                        localUser.Name = entryName.Text;
+                        localUser.Phone = entryPhone.Text;
+                        specialist.Address = entryAddress.Text;
+                        specialist.Description = entryDescription.Text;
+
+                        JsonContent content = JsonContent.Create(specialist);
+                        var response = await apiConfig.client.PutAsync(urlspecialist, content);
+                        string result = await response.Content.ReadAsStringAsync();
+                        await DisplayAlert("Результат", result, "Ok");
+
+                        Navigation.RemovePage(this);
+                        Navigation.RemovePage(Navigation.NavigationStack[Navigation.NavigationStack.Count - 2]);
+                        await Navigation.PushModalAsync(new NavigationPage(new PageTabbed(specialist)));
+                    }
+                }
             }
             else
             {
-                JsonContent content = JsonContent.Create(localUser);
-                var response = await apiConfig.client.PutAsync(urlUser, content);
-                string result = await response.Content.ReadAsStringAsync();
-                await DisplayAlert("Результат", result, "Ok");
-                await Navigation.PushModalAsync(new NavigationPage(new PageTabbed(localUser)));
+                if (_nameIsValid && _phoneIsValid)
+                {
+                    if (entryName.Text.Equals(localUser.Name) && entryPhone.Text.Equals(localUser.Phone))
+                    {
+                        await DisplayAlert("Результат", "Данные не были изменены", "Ok");
+                    }
+                    else
+                    {
+                        if (!entryPhone.Text.Equals(localUser.Phone))
+                        {
+                            await DisplayAlert("Внимание!", "Номер телефона изменен! Теперь вход будет осуществляться по номеру телефона: " + entryPhone.Text, "Ok");
+                        }
+
+                        localUser.Name = entryName.Text;
+                        localUser.Phone = entryPhone.Text;
+
+                        JsonContent content = JsonContent.Create(localUser);
+                        var response = await apiConfig.client.PutAsync(urlUser, content);
+                        string result = await response.Content.ReadAsStringAsync();
+                        await DisplayAlert("Результат", result, "Ok");
+
+                        Navigation.RemovePage(this);
+                        Navigation.RemovePage(Navigation.NavigationStack[Navigation.NavigationStack.Count - 2]);
+                        await Navigation.PushModalAsync(new NavigationPage(new PageTabbed(localUser)));
+                    }
+                }
             }
         }
     }

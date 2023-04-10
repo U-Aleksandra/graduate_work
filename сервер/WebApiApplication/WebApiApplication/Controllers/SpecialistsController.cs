@@ -56,19 +56,12 @@ namespace WebApiApplication.Controllers
                 Specialist outdatedSpecialist = await _adp.Specialists.Where(s => s.Id == specialist.Id).FirstOrDefaultAsync();
                 if (outdatedSpecialist != null)
                 {
-                    if (Equals(outdatedSpecialist, specialist))
-                    {
-                        return BadRequest("Данные не были изменены");
-                    }
-                    else
-                    {
-                        outdatedSpecialist.Name = specialist.Name;
-                        outdatedSpecialist.Phone = specialist.Phone;
-                        outdatedSpecialist.Description = specialist.Description;
-                        outdatedSpecialist.Address = specialist.Address;
-                        _adp.SaveChanges();
-                        return Ok("Изменения сохранены");
-                    }
+                    outdatedSpecialist.Name = specialist.Name;
+                    outdatedSpecialist.Phone = specialist.Phone;
+                    outdatedSpecialist.Description = specialist.Description;
+                    outdatedSpecialist.Address = specialist.Address;
+                    _adp.SaveChanges();
+                    return Ok("Изменения сохранены");
                 }
                 else return NotFound();
             }
