@@ -96,6 +96,27 @@ namespace WebApiApplication.Controllers
            else return NotFound();
         }
 
+        [HttpPost("checkPhone")]
+        public async Task<IActionResult> checkPhone([FromBody]string phone)
+        {
+            Console.WriteLine("1");
+            if (phone != null)
+            {
+                Console.WriteLine("2");
+                if (await _adp.Users.FirstOrDefaultAsync(u => u.Phone == phone) == null)
+                {
+                    Console.WriteLine("3");
+                    return Ok();
+                }
+                else
+                {
+                    Console.WriteLine("4");
+                    return BadRequest("Данный номер телефона уже существует в системе");
+                }
+            }
+            return BadRequest();
+        }
+
         // DELETE api/<ValuesController>/5
         [HttpDelete("{id}")]
         public void Delete(int id)

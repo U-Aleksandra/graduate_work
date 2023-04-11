@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Xamarin.Forms.MaskedEntry;
+using System.Net.Http;
 
 namespace graduate_work
 {
@@ -18,7 +20,7 @@ namespace graduate_work
     {
         private User localUser;
         private Entry entryName;
-        private Entry entryPhone;
+        private MaskedEntry entryPhone;
         private Entry entryDescription;
         private Entry entryAddress;
         Label errorName = new Label() { FontFamily = "Roboto", FontSize = 18, TextColor = Color.Red, Margin = new Thickness(10, 0, 0, 0) };
@@ -30,10 +32,11 @@ namespace graduate_work
 
         private readonly string urlUser = $"https://{apiConfig.url}:7113/api/Users";
         private readonly string urlspecialist = $"https://{apiConfig.url}:7113/api/Specialists";
+        private readonly string urlCheckPhone = $"https://{apiConfig.url}:7113/api/Users/checkPhone";
         public PageEditProfile(User user)
         {
             entryName = new Entry() { Text = user.Name, FontFamily = "Roboto", FontSize = 18, TextColor = Color.Black, Margin = new Thickness(10) };
-            entryPhone = new Entry() { Text = user.Phone, FontFamily = "Roboto", FontSize = 18, TextColor = Color.Black, Margin = new Thickness(10) };
+            entryPhone = new MaskedEntry() { Text = user.Phone, FontFamily = "Roboto", FontSize = 18, TextColor = Color.Black, Margin = new Thickness(10), Mask = "+7(XXX)XXX-XX-XX", Keyboard = Keyboard.Numeric };
             
             InitializeComponent();
             if(user is Specialist specialist)
@@ -141,11 +144,28 @@ namespace graduate_work
                     {
                         if (!entryPhone.Text.Equals(localUser.Phone))
                         {
+                            localUser.Phone = entryPhone.Text;
                             await DisplayAlert("Внимание!", "Номер телефона изменен! Теперь вход будет осуществляться по номеру телефона: " + entryPhone.Text, "Ok");
+                            /*var contentPhone = new FormUrlEncodedContent(new[]
+                            {
+                                new KeyValuePair<string, string>("", entryPhone.Text) 
+                            });
+                            Dictionary<string, string> keyValuePairs = new Dictionary<string, string>() {{ "", entryPhone.Text }};
+                            //StringContent contentPhone = new StringContent(entryPhone.Text);
+                            var responsePhone = await apiConfig.client.PostAsync(urlCheckPhone, contentPhone);
+                            string resultPhone = await responsePhone.Content.ReadAsStringAsync();
+                            if (responsePhone.StatusCode == HttpStatusCode.OK)
+                            {
+                                localUser.Phone = entryPhone.Text;
+                                await DisplayAlert("Внимание!", "Номер телефона изменен! Теперь вход будет осуществляться по номеру телефона: " + entryPhone.Text, "Ok");
+                            }
+                            else
+                            {
+                                await DisplayAlert("Результат", resultPhone, "Ok");
+                            }*/  
                         }
 
                         localUser.Name = entryName.Text;
-                        localUser.Phone = entryPhone.Text;
                         specialist.Address = entryAddress.Text;
                         specialist.Description = entryDescription.Text;
 
