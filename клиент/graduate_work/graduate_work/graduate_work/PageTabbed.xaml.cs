@@ -22,6 +22,11 @@ namespace graduate_work
 
             Children.Add(new PageHome(user));
             Children.Add(new PageProfile(user));
+
+            if(user is Specialist specialist)
+            {
+                Children.Add(new PageServices(specialist));
+            }
         }
     }
 }

@@ -1312,3 +1312,4 @@ D:\Code\C#\graduate_work\клиент\graduate_work\graduate_work\graduate_work.
 D:\Code\C#\graduate_work\клиент\graduate_work\graduate_work\graduate_work.Android\obj\Debug\130\stamp\_GenerateJavaStubs.stamp
 D:\Code\C#\graduate_work\клиент\graduate_work\graduate_work\graduate_work.Android\obj\Debug\130\stamp\_GeneratePackageManagerJava.stamp
 D:\Code\C#\graduate_work\клиент\graduate_work\graduate_work\graduate_work.Android\obj\Debug\130\stamp\_ResolveLibraryProjectImports.stamp
+D:\Code\C#\graduate_work\клиент\graduate_work\graduate_work\graduate_work.Android\obj\Debug\130\res\drawable\outline_view_list_white_24dp.png

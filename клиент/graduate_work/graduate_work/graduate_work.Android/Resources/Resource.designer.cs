@@ -16685,16 +16685,19 @@ namespace graduate_work.Droid
 			public const int outline_home_white_24dp = 2131165334;
 			
 			// aapt resource value: 0x7F070097
-			public const int preference_list_divider_material = 2131165335;
+			public const int outline_view_list_white_24dp = 2131165335;
 			
 			// aapt resource value: 0x7F070098
-			public const int test_custom_background = 2131165336;
+			public const int preference_list_divider_material = 2131165336;
 			
 			// aapt resource value: 0x7F070099
-			public const int tooltip_frame_dark = 2131165337;
+			public const int test_custom_background = 2131165337;
 			
 			// aapt resource value: 0x7F07009A
-			public const int tooltip_frame_light = 2131165338;
+			public const int tooltip_frame_dark = 2131165338;
+			
+			// aapt resource value: 0x7F07009B
+			public const int tooltip_frame_light = 2131165339;
 			
 			static Drawable()
 			{
