@@ -20,17 +20,17 @@
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
-                    <ImageButton Source="logoNogti.jpg" Grid.Column="0" Grid.Row="0"/>
-                    <ImageButton Source="logoMakeup.jpg" Grid.Column="0" Grid.Row="1"/>
+                    <ImageButton Source="logoNogti.jpg" Grid.Column="0" Grid.Row="0" Clicked="ImageButtonNogti_Clicked"/>
+                    <ImageButton Source="logoMakeup.jpg" Grid.Column="0" Grid.Row="1" Clicked="ImageButtonMakeup_Clicked"/>
 
-                    <ImageButton Source="logoHear.jpg" Grid.Column="1" Grid.Row="0"/>
-                    <ImageButton Source="logoBrovi.jpg" Grid.Column="1" Grid.Row="1"/>
+                    <ImageButton Source="logoHear.jpg" Grid.Column="1" Grid.Row="0" Clicked="ImageButtonHair_Clicked"/>
+                    <ImageButton Source="logoBrovi.jpg" Grid.Column="1" Grid.Row="1" Clicked="ImageButtonBrovi_Clicked"/>
 
-                    <ImageButton Source="logoResnicy.jpg" Grid.Column="2" Grid.Row="0"/>
-                    <ImageButton Source="logoDepilaciya.jpg" Grid.Column="2" Grid.Row="1"/>
+                    <ImageButton Source="logoResnicy.jpg" Grid.Column="2" Grid.Row="0" Clicked="ImageButtonResnicy_Clicked"/>
+                    <ImageButton Source="logoDepilaciya.jpg" Grid.Column="2" Grid.Row="1" Clicked="ImageButtonDepilaciya_Clicked"/>
 
-                    <ImageButton Source="logoKosmetologiya.jpg" Grid.Column="3" Grid.Row="0"/>
-                    <ImageButton Source="logoMassag.jpg" Grid.Column="3" Grid.Row="1"/>
+                    <ImageButton Source="logoKosmetologiya.jpg" Grid.Column="3" Grid.Row="0" Clicked="ImageButtonaKosmetologiya_Clicked"/>
+                    <ImageButton Source="logoMassag.jpg" Grid.Column="3" Grid.Row="1" Clicked="ImageButtonMassag_Clicked"/>
                 </Grid>
             </ScrollView>
         </StackLayout>

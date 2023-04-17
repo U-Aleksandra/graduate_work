@@ -45,3 +45,4 @@ D:\Code\C#\graduate_work\клиент\graduate_work\graduate_work\graduate_work\
 D:\Code\C#\graduate_work\клиент\graduate_work\graduate_work\graduate_work\obj\Debug\netstandard2.0\PageEditProfile.xaml.g.cs
 D:\Code\C#\graduate_work\клиент\graduate_work\graduate_work\graduate_work\obj\Debug\netstandard2.0\PageServices.xaml.g.cs
 D:\Code\C#\graduate_work\клиент\graduate_work\graduate_work\graduate_work\obj\Debug\netstandard2.0\PageCreateServise.xaml.g.cs
+D:\Code\C#\graduate_work\клиент\graduate_work\graduate_work\graduate_work\obj\Debug\netstandard2.0\PageServiceByCaterory.xaml.g.cs

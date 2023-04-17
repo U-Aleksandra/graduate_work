@@ -7,7 +7,7 @@ using static Xamarin.Essentials.Permissions;
 namespace graduate_work.Models
 {
     [Serializable]
-    internal class Specialist : User
+    public class Specialist : User
     {
 
         [JsonPropertyName("category")]

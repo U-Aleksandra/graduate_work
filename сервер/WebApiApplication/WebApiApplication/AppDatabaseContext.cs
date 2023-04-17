@@ -12,5 +12,8 @@ namespace WebApiApplication
         
         public DbSet<User> Users { get; set; }
         public DbSet<Specialist> Specialists { get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<NameService> NameServices { get; set; }
+        public DbSet<Service> Services { get; set; }
     }
 }
