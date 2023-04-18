@@ -9,7 +9,6 @@ namespace WebApiApplication.Models
         public string Address { get; set; }
         public string? Description { get; set; }
         public List<Service> Services { get; private set; }
-
         public Specialist(string name, string phone, string password, bool isSpecialist, string category, string address) : base(name, phone, password, isSpecialist)
         {
             Name = name;

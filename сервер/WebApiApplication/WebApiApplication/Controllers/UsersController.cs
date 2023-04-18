@@ -107,6 +107,19 @@ namespace WebApiApplication.Controllers
             else return NoContent();
         }
 
+        [HttpGet("GetServicesByName")]
+        public async Task<IActionResult> GetServicesByName(int nameServisesId)
+        {
+            List<Service> listOfServises = _adp.Services.Where(s => s.NameService.Id == nameServisesId).ToList();
+            if (listOfServises.Any())
+            {
+                return Ok(listOfServises);
+            }
+            else return NoContent();
+        }
+
+
+
         [HttpPost("checkPhone")]
         public async Task<IActionResult> checkPhone([FromBody]string phone)
         {

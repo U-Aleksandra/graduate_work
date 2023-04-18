@@ -6,7 +6,7 @@ namespace graduate_work.Droid
     {
         public static HttpClientHandler clientHandler = new HttpClientHandler();
         public static HttpClient client;
-        public static string url = "192.168.0.16";
+        public static string url = "192.168.252.212";
         static apiConfig()
         {
             clientHandler.ServerCertificateCustomValidationCallback = (sender, cert, chain, sslPolicyErrors) => true;

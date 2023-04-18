@@ -3,8 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="graduate_work.PageServiceByCaterory">
     <ContentPage.Content>
-        <StackLayout>
-            <ListView x:Name="nameServiceList"/>
+        <StackLayout Margin="0,15,0,0">
+            <ListView x:Name="nameServiceList" RowHeight="50" ItemSelected="nameServiceList_ItemSelected"/>
+            <Label x:Name="testLabel" Text="lalala"></Label>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
