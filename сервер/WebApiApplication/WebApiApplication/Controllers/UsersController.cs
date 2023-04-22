@@ -111,9 +111,16 @@ namespace WebApiApplication.Controllers
         public async Task<IActionResult> GetServicesByName(int nameServisesId)
         {
             List<Service> listOfServises = _adp.Services.Where(s => s.NameService.Id == nameServisesId).ToList();
-            if (listOfServises.Any())
+            var nameServices = await _adp.NameServices.FirstOrDefaultAsync(ns => ns.Id == nameServisesId);
+
+
+            if (nameServices != null)
             {
-                return Ok(listOfServises);
+                foreach (var item in nameServices.Services)
+                {
+                    item.Specialist = await _adp.Specialists.FirstOrDefaultAsync(s => s.Services.Contains(item));
+                }
+                return Ok(nameServices.Services);
             }
             else return NoContent();
         }

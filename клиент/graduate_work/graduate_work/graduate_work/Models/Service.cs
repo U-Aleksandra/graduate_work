@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace graduate_work.Models
 {
@@ -11,7 +12,11 @@ namespace graduate_work.Models
         public bool StartPrice { get; set; }
         public DateTime ServicesTime { get; set; }
         public DateTime Break { get; set; }
-        public NameService NameService { get; private set; }
-        public Specialist Specialist { get; private set; }
+
+        [JsonPropertyName("nameService"), JsonInclude]
+        public NameService NameService { get; set; } = null;
+
+        [JsonPropertyName("specialist"), JsonInclude]
+        public Specialist Specialist { get; set; } = null;
     }
 }

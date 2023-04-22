@@ -9,7 +9,6 @@ namespace graduate_work.Models
     [Serializable]
     public class Specialist : User
     {
-
         [JsonPropertyName("category")]
         public string Category { get; set; }
 
@@ -18,6 +17,9 @@ namespace graduate_work.Models
 
         [JsonPropertyName("description")]
         public string Description { get; set; }
+
+        [JsonPropertyName("services"), JsonInclude]
+        public List<Service> Services { get; private set; }
 
         [System.Text.Json.Serialization.JsonConstructor]
         public Specialist(string name, string phone, string password, bool isSpecialist, string category, string address, string description = "Напишите несколько слов о себе") : base(name, phone, password, isSpecialist)
@@ -29,6 +31,7 @@ namespace graduate_work.Models
             Category = category;
             Address = address;
             Description = description;
+            Services = new List<Service>();
         }
     }
 

@@ -11,7 +11,7 @@ namespace WebApiApplication.Models
         public bool StartPrice { get; set; }
         public DateTime ServicesTime { get; set; }
         public DateTime Break { get; set; }
-        public NameService? NameService { get; private set; }
-        public Specialist? Specialist { get; private set; }
+        public NameService? NameService { get; set; }
+        public Specialist? Specialist { get;  set; }
     }
 }
