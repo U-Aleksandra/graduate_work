@@ -32,12 +32,10 @@ namespace graduate_work
 
         private async void nameServiceList_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            string item = e.SelectedItem.ToString();
+            string item = e.SelectedItem.ToString(); 
             var nameServices = localListNameService.FirstOrDefault(l => l.nameService == item);
             int nameServicesId = nameServices.Id;
             var response = await apiConfig.client.GetAsync(urlSearchByName + $"?nameServisesId={nameServicesId}");
-            //var services = await response.Content.ReadFromJsonAsync<NameService>();
-            Console.WriteLine(response.Content.ReadAsStringAsync().Result);
             List<Service> services = JsonConvert.DeserializeObject<List<Service>>(response.Content.ReadAsStringAsync().Result);
             await Navigation.PushAsync(new PageServiceByName(services));
         }
