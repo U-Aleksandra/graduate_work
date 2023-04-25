@@ -114,7 +114,7 @@ namespace WebApiApplication.Controllers
             var nameServices = await _adp.NameServices.FirstOrDefaultAsync(ns => ns.Id == nameServisesId);
 
 
-            if (nameServices != null)
+            if (nameServices.Services != null)
             {
                 foreach (var item in nameServices.Services)
                 {
