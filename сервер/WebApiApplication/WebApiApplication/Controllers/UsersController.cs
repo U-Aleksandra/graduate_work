@@ -109,8 +109,7 @@ namespace WebApiApplication.Controllers
 
         [HttpGet("GetServicesByName")]
         public async Task<IActionResult> GetServicesByName(int nameServisesId)
-        {
-            List<Service> listOfServises = _adp.Services.Where(s => s.NameService.Id == nameServisesId).ToList();
+        { 
             var nameServices = await _adp.NameServices.FirstOrDefaultAsync(ns => ns.Id == nameServisesId);
 
 

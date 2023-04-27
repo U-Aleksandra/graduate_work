@@ -9,8 +9,8 @@ namespace graduate_work.Models
     [Serializable]
     public class Specialist : User
     {
-        [JsonPropertyName("category")]
-        public string Category { get; set; }
+        [JsonPropertyName("nameCategory")]
+        public string NameCategory { get; set; }
 
         [JsonPropertyName("address")]
         public string Address { get; set; }
@@ -20,15 +20,16 @@ namespace graduate_work.Models
 
         [JsonPropertyName("services"), JsonInclude]
         public List<Service> Services { get; private set; }
+        public Category Category { get; set; }
 
         [System.Text.Json.Serialization.JsonConstructor]
-        public Specialist(string name, string phone, string password, bool isSpecialist, string category, string address, string description = "Напишите несколько слов о себе") : base(name, phone, password, isSpecialist)
+        public Specialist(string name, string phone, string password, bool isSpecialist, string nameCategory, string address, string description = "Напишите несколько слов о себе") : base(name, phone, password, isSpecialist)
         {
             Name = name;
             Phone = phone;
             Password = password;
             this.isSpecialist = isSpecialist;
-            Category = category;
+            NameCategory = nameCategory;
             Address = address;
             Description = description;
             Services = new List<Service>();

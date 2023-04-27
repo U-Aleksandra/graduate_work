@@ -16,16 +16,21 @@ namespace graduate_work
 	public partial class PageRegistSpecialist : ContentPage
 	{
         private readonly string url = $"https://{apiConfig.url}:7113/api/Specialists/Regist";
+        private readonly string urlGetCategory = $"https://{apiConfig.url}:7113/api/Specialists/GetCategory";
 
-		private bool _isValidActivity;
+        private bool _isValidActivity;
 		private bool _isValidAddess;
 
 		private User localUser;
+		private List<Category> listCategory;
         public PageRegistSpecialist (User user)
 		{
 			InitializeComponent ();
 			localUser = user;
-		}
+            var response = apiConfig.client.GetAsync(urlGetCategory).Result;
+            listCategory = response.Content.ReadFromJsonAsync<List<Category>>().Result;
+			pickerActivity.ItemsSource = listCategory.Select(lc => lc.Name).ToList();
+        }
 
         [Obsolete]
         private async void buttonAddSpecial_Clicked(object sender, EventArgs e)
@@ -54,7 +59,9 @@ namespace graduate_work
 
 			if(_isValidActivity && _isValidAddess)
 			{
-				JsonContent content = JsonContent.Create(new Specialist(localUser.Name, localUser.Phone, localUser.Password, localUser.isSpecialist, pickerActivity.Items[pickerActivity.SelectedIndex], entryAdress.Text));
+				//Category category = listCategory.FirstOrDefault(lc => lc.Name == pickerActivity.Items[pickerActivity.SelectedIndex]);
+				//Specialist specialist1 = new Specialist(localUser.Name, localUser.Phone, localUser.Password, localUser.isSpecialist, pickerActivity.Items[pickerActivity.SelectedIndex], entryAdress.Text);
+                JsonContent content = JsonContent.Create(new Specialist(localUser.Name, localUser.Phone, localUser.Password, localUser.isSpecialist, pickerActivity.Items[pickerActivity.SelectedIndex], entryAdress.Text));
                 var response = await apiConfig.client.PostAsync(url, content);
                 string result = await response.Content.ReadAsStringAsync();
 

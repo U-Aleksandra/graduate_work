@@ -8,6 +8,7 @@ namespace graduate_work.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public List<NameService> nameServices { get; private set; }
+        public List<NameService> nameServices { get; private set; } = null;
+        public List<Specialist> Specialist { get; private set; }
     }
 }

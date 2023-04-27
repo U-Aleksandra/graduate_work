@@ -6,18 +6,7 @@
         <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
             <Label Text="Данные специалиста" FontSize="30" FontAttributes="Bold" FontFamily="Roboto" 
                    TextColor="#5147AC" HorizontalOptions="Center" Margin="0,0,0,10" ></Label>
-            <Picker x:Name="pickerActivity" Title="Направление деятельности" WidthRequest="300">
-                <Picker.Items>
-                    <x:String>Волосы</x:String>
-                    <x:String>Макияж</x:String>
-                    <x:String>Ногтевой сервис</x:String>
-                    <x:String>Ресницы</x:String>
-                    <x:String>Брови</x:String>
-                    <x:String>Косметология</x:String>
-                    <x:String>Массаж</x:String>
-                    <x:String>Депиляция</x:String>
-                </Picker.Items>
-            </Picker>
+            <Picker x:Name="pickerActivity" Title="Направление деятельности" WidthRequest="300"/>
             <Label x:Name="errorActivity" TextColor="Red" FontFamily="Roboto"></Label>
             <Entry x:Name="entryAdress" Placeholder="Адрес салона" WidthRequest="300"></Entry>
             <Label x:Name="errorAdress" TextColor="Red" FontFamily="Roboto"></Label>

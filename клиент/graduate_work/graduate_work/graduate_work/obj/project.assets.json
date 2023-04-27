@@ -1023,11 +1023,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Code\\C#\\graduate_work\\клиент\\graduate_work\\graduate_work\\graduate_work\\graduate_work.csproj",
+      "projectUniqueName": "D:\\Code\\C#\\graduate\\graduate_work\\клиент\\graduate_work\\graduate_work\\graduate_work\\graduate_work.csproj",
       "projectName": "graduate_work",
-      "projectPath": "D:\\Code\\C#\\graduate_work\\клиент\\graduate_work\\graduate_work\\graduate_work\\graduate_work.csproj",
+      "projectPath": "D:\\Code\\C#\\graduate\\graduate_work\\клиент\\graduate_work\\graduate_work\\graduate_work\\graduate_work.csproj",
       "packagesPath": "C:\\Users\\sushk\\.nuget\\packages\\",
-      "outputPath": "D:\\Code\\C#\\graduate_work\\клиент\\graduate_work\\graduate_work\\graduate_work\\obj\\",
+      "outputPath": "D:\\Code\\C#\\graduate\\graduate_work\\клиент\\graduate_work\\graduate_work\\graduate_work\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "D:\\Programs\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "9ghlocvNoq8DiLQ4VP4WSfIXKcL9vaRVX6j5b4PX/AAuYphSaxCLdvrJNZ67PhgVbOx1Eq+8Y4e4x2IgfwOqIg==",
+  "dgSpecHash": "n03RnomtrAsfemmGcLUkSQKDRm/7kkl9hc43kRZPcJ30/NHRUdcOBtCBRMLdwCxHj5pT3ZAp9pzsXfUiKT26Gg==",
   "success": true,
-  "projectFilePath": "D:\\Code\\C#\\graduate_work\\клиент\\graduate_work\\graduate_work\\graduate_work\\graduate_work.csproj",
+  "projectFilePath": "D:\\Code\\C#\\graduate\\graduate_work\\клиент\\graduate_work\\graduate_work\\graduate_work\\graduate_work.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\sushk\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\7.0.0\\microsoft.bcl.asyncinterfaces.7.0.0.nupkg.sha512",
     "C:\\Users\\sushk\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",

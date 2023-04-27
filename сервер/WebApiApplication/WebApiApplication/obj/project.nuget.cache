@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Y27q1n5fHWwIao5sOtKMmZ6KgFsvHjiJpVtH3jDGMEVbQpI9hCuVQi/7XqbpYLp123SJpXHK0eCV3zytR5k95Q==",
+  "dgSpecHash": "HuBk7lzhiogf23kdsqm3U2GbQgMRhoJasXuwWYK20kA4Dbtdr2Ij2vLdNMyKaWYoWl98SVKCAMtY3vvaqkR8jQ==",
   "success": true,
-  "projectFilePath": "D:\\Code\\C#\\graduate_work\\сервер\\WebApiApplication\\WebApiApplication\\WebApiApplication.csproj",
+  "projectFilePath": "D:\\Code\\C#\\graduate\\graduate_work\\сервер\\WebApiApplication\\WebApiApplication\\WebApiApplication.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\sushk\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\sushk\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

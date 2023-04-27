@@ -3773,11 +3773,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Code\\C#\\graduate_work\\сервер\\WebApiApplication\\WebApiApplication\\WebApiApplication.csproj",
+      "projectUniqueName": "D:\\Code\\C#\\graduate\\graduate_work\\сервер\\WebApiApplication\\WebApiApplication\\WebApiApplication.csproj",
       "projectName": "WebApiApplication",
-      "projectPath": "D:\\Code\\C#\\graduate_work\\сервер\\WebApiApplication\\WebApiApplication\\WebApiApplication.csproj",
+      "projectPath": "D:\\Code\\C#\\graduate\\graduate_work\\сервер\\WebApiApplication\\WebApiApplication\\WebApiApplication.csproj",
       "packagesPath": "C:\\Users\\sushk\\.nuget\\packages\\",
-      "outputPath": "D:\\Code\\C#\\graduate_work\\сервер\\WebApiApplication\\WebApiApplication\\obj\\",
+      "outputPath": "D:\\Code\\C#\\graduate\\graduate_work\\сервер\\WebApiApplication\\WebApiApplication\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "D:\\Programs\\Microsoft Visual Studio\\Shared\\NuGetPackages"

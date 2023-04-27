@@ -139,12 +139,17 @@ namespace WebApiApplication.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Category")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int?>("CategoryId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NameCategory")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasIndex("CategoryId");
 
                     b.HasDiscriminator().HasValue("Specialist");
                 });
@@ -173,8 +178,19 @@ namespace WebApiApplication.Migrations
                     b.Navigation("Specialist");
                 });
 
+            modelBuilder.Entity("WebApiApplication.Models.Specialist", b =>
+                {
+                    b.HasOne("WebApiApplication.Models.Category", "Category")
+                        .WithMany("Specialist")
+                        .HasForeignKey("CategoryId");
+
+                    b.Navigation("Category");
+                });
+
             modelBuilder.Entity("WebApiApplication.Models.Category", b =>
                 {
+                    b.Navigation("Specialist");
+
                     b.Navigation("nameServices");
                 });
 

@@ -35,7 +35,7 @@ namespace graduate_work
                         new BoxView { Color = Color.FromHex("#5147AC"), HeightRequest = 1, HorizontalOptions = LayoutOptions.Fill},
 
                         new Label { Text = "Направление деятельности", FontFamily="Roboto", FontSize = 15,TextColor = Color.FromHex("#5147AC"), Margin = new Thickness(10)},
-                        new Label { Text = specialist.Category, FontFamily="Roboto", FontSize = 18,TextColor = Color.Black, Margin = new Thickness(10)},
+                        new Label { Text = specialist.NameCategory, FontFamily="Roboto", FontSize = 18,TextColor = Color.Black, Margin = new Thickness(10)},
                         new BoxView { Color = Color.FromHex("#5147AC"), HeightRequest = 1, HorizontalOptions = LayoutOptions.Fill},
 
                         new Label { Text = "Контакты", FontFamily="Roboto",FontAttributes = FontAttributes.Bold, FontSize = 18,TextColor = Color.FromHex("#5147AC"), Margin = new Thickness(10)},

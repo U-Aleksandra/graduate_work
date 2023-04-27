@@ -25,9 +25,22 @@ namespace WebApiApplication.Controllers
             {
                 if (await _adp.Specialists.FirstOrDefaultAsync(s => s.Phone == specialist.Phone) == null)
                 {
-                    await _adp.Specialists.AddAsync(specialist);
-                    await _adp.SaveChangesAsync();
-                    return Ok(specialist);
+                    try
+                    {
+                        Category category = await _adp.Categories.FirstOrDefaultAsync(c => c.Name == specialist.NameCategory);
+                        if(category != null)
+                        {
+                            await _adp.Specialists.AddAsync(specialist);
+                            specialist.Category = category;
+                            await _adp.SaveChangesAsync();
+                            return Ok(specialist.Category);
+                        }
+                    }
+                    catch(Exception exc)
+                    {
+                        Console.WriteLine(exc.Message);
+                    }
+                    
                 }
                 else
                 {
@@ -66,6 +79,17 @@ namespace WebApiApplication.Controllers
                 else return NotFound();
             }
            else return StatusCode((int)HttpStatusCode.Forbidden);
+        }
+
+        [HttpGet("GetCategory")]
+        public async Task<IActionResult> GetCategory()
+        {
+            List<Category> listCategory =  _adp.Categories.ToList();
+            if (listCategory.Any())
+            {
+                return Ok(listCategory);
+            }
+            else return NoContent();
         }
     }
 }
