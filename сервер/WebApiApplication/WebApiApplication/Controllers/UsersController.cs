@@ -71,6 +71,8 @@ namespace WebApiApplication.Controllers
                     {
                         if (searchUser is Specialist specialist)
                         {
+                            Category? category = await _adp.Categories.FirstOrDefaultAsync(c => c.Name == specialist.NameCategory);
+                            specialist.Category = category;
                             return Ok(specialist);
                         }
                     }
@@ -85,7 +87,7 @@ namespace WebApiApplication.Controllers
         [HttpPut]
         public async Task<IActionResult> Put(User user)
         {
-            User outdatedUser = await _adp.Users.Where(u => u.Id == user.Id).FirstOrDefaultAsync();
+            User? outdatedUser = await _adp.Users.Where(u => u.Id == user.Id).FirstOrDefaultAsync();
             if (outdatedUser != null)
             {
                 outdatedUser.Name = user.Name;
@@ -111,7 +113,7 @@ namespace WebApiApplication.Controllers
         public async Task<IActionResult> GetServicesByName(int nameServisesId)
         { 
             var nameServices = await _adp.NameServices.FirstOrDefaultAsync(ns => ns.Id == nameServisesId);
-
+            List<Service> listServise =  _adp.Services.Where(s => s.NameService.nameService == nameServices.nameService).ToList();
 
             if (nameServices.Services != null)
             {

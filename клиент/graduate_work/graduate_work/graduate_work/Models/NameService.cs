@@ -9,8 +9,8 @@ namespace graduate_work.Models
     {
         public int Id { get; set; }
         public string nameService { get; set; }
-        public Category Category { get; private set; }
-        public List<Service> Services { get; private set; }
+        public Category Category { get; set; }
+        public List<Service> Services { get; set; }
 
         public NameService(string nameService) 
         { 

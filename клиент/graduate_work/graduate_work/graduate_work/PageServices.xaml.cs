@@ -13,14 +13,16 @@ namespace graduate_work
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PageServices : ContentPage
     {
+        User localUser;
         public PageServices(User user)
         {
             InitializeComponent();
+            localUser = user;
         }
 
         private async void createServise_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new PageCreateServise());
+            await Navigation.PushAsync(new PageCreateServise(localUser));
         }
     }
 }

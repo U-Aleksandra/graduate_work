@@ -33,7 +33,7 @@ namespace WebApiApplication.Controllers
                             await _adp.Specialists.AddAsync(specialist);
                             specialist.Category = category;
                             await _adp.SaveChangesAsync();
-                            return Ok(specialist.Category);
+                            return Ok(specialist);
                         }
                     }
                     catch(Exception exc)
@@ -90,6 +90,24 @@ namespace WebApiApplication.Controllers
                 return Ok(listCategory);
             }
             else return NoContent();
+        }
+
+        [HttpPost("CreateService")]
+        public async Task<IActionResult> CreateService(Service service) 
+        {
+            if(service != null)
+            {
+                if(await _adp.Services.FirstOrDefaultAsync(s => s.Specialist.Id == service.Specialist.Id &&
+                s.NameService.nameService == service.NameService.nameService) == null)
+                {
+                    return Ok();
+                }
+                else
+                {
+                    return BadRequest("Данная услуга уже существует");
+                }
+            }
+            return BadRequest("Данные не сохранились");
         }
     }
 }

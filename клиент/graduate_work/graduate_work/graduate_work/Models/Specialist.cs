@@ -20,6 +20,7 @@ namespace graduate_work.Models
 
         [JsonPropertyName("services"), JsonInclude]
         public List<Service> Services { get; private set; }
+        [JsonPropertyName("category")]
         public Category Category { get; set; }
 
         [System.Text.Json.Serialization.JsonConstructor]
