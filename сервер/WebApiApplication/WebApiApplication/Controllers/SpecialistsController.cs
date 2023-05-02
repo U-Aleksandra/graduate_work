@@ -100,7 +100,19 @@ namespace WebApiApplication.Controllers
                 if(await _adp.Services.FirstOrDefaultAsync(s => s.Specialist.Id == service.Specialist.Id &&
                 s.NameService.nameService == service.NameService.nameService) == null)
                 {
-                    return Ok();
+                    NameService nameService = await _adp.NameServices.FirstOrDefaultAsync(ns => ns.nameService == service.NameService.nameService);
+                    Specialist specialist = await _adp.Specialists.FirstOrDefaultAsync(s => s.Id == service.Specialist.Id);
+                    if(nameService != null && specialist != null)
+                    {
+                        service.Specialist = null;
+                        service.NameService = null;
+                        await _adp.Services.AddAsync(service);
+                        service.NameService = nameService;
+                        service.Specialist = specialist;
+                        _adp.SaveChanges();
+                        return Ok("Услуга создана");
+                    }
+                    return BadRequest("Отсутсвие необходимых данных");
                 }
                 else
                 {

@@ -5,7 +5,8 @@
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Сохранить"
                  Order="Primary"
-                 Priority="0"/>
+                 Priority="0"
+                 Clicked="saveServise_Clicked"/>
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout Margin="25,30,25,0" Spacing="10">

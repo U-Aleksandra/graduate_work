@@ -36,7 +36,7 @@ namespace WebApiApplication.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Categories");
+                    b.ToTable("Categories", (string)null);
                 });
 
             modelBuilder.Entity("WebApiApplication.Models.NameService", b =>
@@ -58,7 +58,7 @@ namespace WebApiApplication.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("NameServices");
+                    b.ToTable("NameServices", (string)null);
                 });
 
             modelBuilder.Entity("WebApiApplication.Models.Service", b =>
@@ -69,8 +69,12 @@ namespace WebApiApplication.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<DateTime>("Break")
+                    b.Property<DateTime>("BreakTime")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("DescriptionService")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("NameServiceId")
                         .HasColumnType("int");
@@ -93,7 +97,7 @@ namespace WebApiApplication.Migrations
 
                     b.HasIndex("SpecialistId");
 
-                    b.ToTable("Services");
+                    b.ToTable("Services", (string)null);
                 });
 
             modelBuilder.Entity("WebApiApplication.Models.User", b =>
@@ -124,7 +128,7 @@ namespace WebApiApplication.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Users");
+                    b.ToTable("Users", (string)null);
 
                     b.HasDiscriminator<string>("Discriminator").HasValue("User");
 
@@ -146,7 +150,6 @@ namespace WebApiApplication.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("NameCategory")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasIndex("CategoryId");

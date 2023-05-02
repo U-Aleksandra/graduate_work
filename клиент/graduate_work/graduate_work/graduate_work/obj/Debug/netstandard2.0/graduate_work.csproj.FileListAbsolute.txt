@@ -53,7 +53,6 @@ D:\Code\C#\graduate\graduate_work\клиент\graduate_work\graduate_work\gradu
 D:\Code\C#\graduate\graduate_work\клиент\graduate_work\graduate_work\graduate_work\obj\Debug\netstandard2.0\graduate_work.csproj.AssemblyReference.cache
 D:\Code\C#\graduate\graduate_work\клиент\graduate_work\graduate_work\graduate_work\obj\Debug\netstandard2.0\graduate_work.GeneratedMSBuildEditorConfig.editorconfig
 D:\Code\C#\graduate\graduate_work\клиент\graduate_work\graduate_work\graduate_work\obj\Debug\netstandard2.0\App.xaml.g.cs
-D:\Code\C#\graduate\graduate_work\клиент\graduate_work\graduate_work\graduate_work\obj\Debug\netstandard2.0\AppShell.xaml.g.cs
 D:\Code\C#\graduate\graduate_work\клиент\graduate_work\graduate_work\graduate_work\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
 D:\Code\C#\graduate\graduate_work\клиент\graduate_work\graduate_work\graduate_work\obj\Debug\netstandard2.0\PageCreateServise.xaml.g.cs
 D:\Code\C#\graduate\graduate_work\клиент\graduate_work\graduate_work\graduate_work\obj\Debug\netstandard2.0\PageEditProfile.xaml.g.cs
