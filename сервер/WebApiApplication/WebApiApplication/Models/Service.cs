@@ -6,7 +6,7 @@ namespace WebApiApplication.Models
     public class Service
     {
         public int Id { get; set; }
-        public string DescriptionService { get; set; }
+        public string? DescriptionService { get; set; }
 
         [Column(TypeName = "decimal(20, 0)")]
         public decimal Price { get; set; }

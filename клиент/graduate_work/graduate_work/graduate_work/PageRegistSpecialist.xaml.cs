@@ -59,8 +59,6 @@ namespace graduate_work
 
 			if(_isValidActivity && _isValidAddess)
 			{
-				//Category category = listCategory.FirstOrDefault(lc => lc.Name == pickerActivity.Items[pickerActivity.SelectedIndex]);
-				//Specialist specialist1 = new Specialist(localUser.Name, localUser.Phone, localUser.Password, localUser.isSpecialist, pickerActivity.Items[pickerActivity.SelectedIndex], entryAdress.Text);
                 JsonContent content = JsonContent.Create(new Specialist(localUser.Name, localUser.Phone, localUser.Password, localUser.isSpecialist, pickerActivity.Items[pickerActivity.SelectedIndex], entryAdress.Text));
                 var response = await apiConfig.client.PostAsync(url, content);
                 string result = await response.Content.ReadAsStringAsync();

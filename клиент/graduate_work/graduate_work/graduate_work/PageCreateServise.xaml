@@ -11,8 +11,10 @@
     <ContentPage.Content>
         <StackLayout Margin="25,30,25,0" Spacing="10">
             <Picker x:Name="pickerService" Title="Название услуги" WidthRequest="300" />
+            <Label x:Name="errorService" TextColor="Red" FontFamily="Roboto"></Label>
             <Entry x:Name="entryNameServise" Placeholder="Описание" WidthRequest="300"/>
-            <Entry x:Name="entryPrice" Placeholder="Стоимость" WidthRequest="300"/>
+            <Entry x:Name="entryPrice" Placeholder="Стоимость" WidthRequest="300" Keyboard="Numeric"/>
+            <Label x:Name="errorPrice" TextColor="Red" FontFamily="Roboto"/>
             <StackLayout Orientation="Horizontal">
                 <Label Text="Начальная цена" FontFamily="Roboto" FontSize="18" VerticalOptions="Center" Margin="5,0,0,0"></Label>
                 <CheckBox x:Name="checkBoxPrice" Color="#5147AC" ></CheckBox>
@@ -21,9 +23,10 @@
                 <Label Text="Продолжительность" FontFamily="Roboto" FontSize="18" VerticalOptions="Center" Margin="5,0,0,0"></Label>
                 <TimePicker x:Name="timePickerService" Time="01:00:00" Format = "HH:mm"/>
             </StackLayout>
+            <Label x:Name="errorTimeService" TextColor="Red" FontFamily="Roboto"/>
             <StackLayout Orientation="Horizontal">
                 <Label Text="Перерыв" FontFamily="Roboto" FontSize="18" VerticalOptions="Center" Margin="5,0,0,0"></Label>
-                <TimePicker x:Name="timePickerBreak" Time="01:00:00" Format = "HH:mm" />
+                <TimePicker x:Name="timePickerBreak" Time="00:30:00" Format = "HH:mm" />
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

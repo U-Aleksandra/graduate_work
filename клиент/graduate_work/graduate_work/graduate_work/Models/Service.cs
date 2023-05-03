@@ -8,7 +8,7 @@ namespace graduate_work.Models
     public class Service
     {
         public int Id { get; set; }
-        public string DescriptionService { get; set; }
+        public string DescriptionService { get; set; } = null;
         public decimal Price { get; set; }
         public bool StartPrice { get; set; }
         public DateTime ServicesTime { get; set; }

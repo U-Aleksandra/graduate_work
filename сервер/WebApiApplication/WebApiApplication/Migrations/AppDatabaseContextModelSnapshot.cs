@@ -36,7 +36,7 @@ namespace WebApiApplication.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Categories", (string)null);
+                    b.ToTable("Categories");
                 });
 
             modelBuilder.Entity("WebApiApplication.Models.NameService", b =>
@@ -58,7 +58,7 @@ namespace WebApiApplication.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("NameServices", (string)null);
+                    b.ToTable("NameServices");
                 });
 
             modelBuilder.Entity("WebApiApplication.Models.Service", b =>
@@ -73,7 +73,6 @@ namespace WebApiApplication.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("DescriptionService")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("NameServiceId")
@@ -97,7 +96,7 @@ namespace WebApiApplication.Migrations
 
                     b.HasIndex("SpecialistId");
 
-                    b.ToTable("Services", (string)null);
+                    b.ToTable("Services");
                 });
 
             modelBuilder.Entity("WebApiApplication.Models.User", b =>
@@ -128,7 +127,7 @@ namespace WebApiApplication.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Users", (string)null);
+                    b.ToTable("Users");
 
                     b.HasDiscriminator<string>("Discriminator").HasValue("User");
 
