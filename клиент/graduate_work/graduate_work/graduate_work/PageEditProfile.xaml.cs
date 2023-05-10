@@ -146,23 +146,6 @@ namespace graduate_work
                         {
                             localUser.Phone = entryPhone.Text;
                             await DisplayAlert("Внимание!", "Номер телефона изменен! Теперь вход будет осуществляться по номеру телефона: " + entryPhone.Text, "Ok");
-                            /*var contentPhone = new FormUrlEncodedContent(new[]
-                            {
-                                new KeyValuePair<string, string>("", entryPhone.Text) 
-                            });
-                            Dictionary<string, string> keyValuePairs = new Dictionary<string, string>() {{ "", entryPhone.Text }};
-                            //StringContent contentPhone = new StringContent(entryPhone.Text);
-                            var responsePhone = await apiConfig.client.PostAsync(urlCheckPhone, contentPhone);
-                            string resultPhone = await responsePhone.Content.ReadAsStringAsync();
-                            if (responsePhone.StatusCode == HttpStatusCode.OK)
-                            {
-                                localUser.Phone = entryPhone.Text;
-                                await DisplayAlert("Внимание!", "Номер телефона изменен! Теперь вход будет осуществляться по номеру телефона: " + entryPhone.Text, "Ok");
-                            }
-                            else
-                            {
-                                await DisplayAlert("Результат", resultPhone, "Ok");
-                            }*/  
                         }
 
                         localUser.Name = entryName.Text;

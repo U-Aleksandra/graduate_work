@@ -100,8 +100,8 @@ namespace WebApiApplication.Controllers
                 if(await _adp.Services.FirstOrDefaultAsync(s => s.Specialist.Id == service.Specialist.Id &&
                 s.NameService.nameService == service.NameService.nameService) == null)
                 {
-                    NameService nameService = await _adp.NameServices.FirstOrDefaultAsync(ns => ns.nameService == service.NameService.nameService);
-                    Specialist specialist = await _adp.Specialists.FirstOrDefaultAsync(s => s.Id == service.Specialist.Id);
+                    NameService? nameService = await _adp.NameServices.FirstOrDefaultAsync(ns => ns.nameService == service.NameService.nameService);
+                    Specialist? specialist = await _adp.Specialists.FirstOrDefaultAsync(s => s.Id == service.Specialist.Id);
                     if(nameService != null && specialist != null)
                     {
                         service.Specialist = null;

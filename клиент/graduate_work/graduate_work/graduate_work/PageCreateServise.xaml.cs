@@ -53,7 +53,7 @@ namespace graduate_work
             if(((string.IsNullOrEmpty(entryPrice.Text)) ||
             (string.IsNullOrWhiteSpace(entryPrice.Text))))
             {
-                errorPrice.Text = "Введите цену услуги";
+                errorPrice.Text = "Введите стоимость услуги";
                 _isValidPrice = false;
             }
             else

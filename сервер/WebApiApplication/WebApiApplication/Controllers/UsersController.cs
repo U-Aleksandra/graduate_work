@@ -111,9 +111,8 @@ namespace WebApiApplication.Controllers
 
         [HttpGet("GetServicesByName")]
         public async Task<IActionResult> GetServicesByName(int nameServisesId)
-        { 
+        {
             var nameServices = await _adp.NameServices.FirstOrDefaultAsync(ns => ns.Id == nameServisesId);
-            List<Service> listServise =  _adp.Services.Where(s => s.NameService.nameService == nameServices.nameService).ToList();
 
             if (nameServices.Services != null)
             {
@@ -126,23 +125,15 @@ namespace WebApiApplication.Controllers
             else return NoContent();
         }
 
-
-
-        [HttpPost("checkPhone")]
-        public async Task<IActionResult> checkPhone([FromBody]string phone)
+        [HttpGet("GetServicesBySpecialist")]
+        public async Task<IActionResult> GetServicesBySpecialist(int idSpecialist)
         {
-            if (phone != null)
+            List<Service> listService = _adp.Services.Include(s => s.NameService).Where(s => s.Specialist.Id == idSpecialist).ToList();
+            if (listService.Any())
             {
-                if (await _adp.Users.FirstOrDefaultAsync(u => u.Phone == phone) == null)
-                {
-                    return Ok();
-                }
-                else
-                {
-                    return BadRequest("Данный номер телефона уже существует в системе");
-                }
+                return Ok(listService);
             }
-            return BadRequest();
+            else return NoContent();
         }
 
         // DELETE api/<ValuesController>/5
