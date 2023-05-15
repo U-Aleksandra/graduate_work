@@ -15,5 +15,6 @@ namespace WebApiApplication
         public DbSet<Category> Categories { get; set; }
         public DbSet<NameService> NameServices { get; set; }
         public DbSet<Service> Services { get; set; }
+        public DbSet<WorkSchedule> WorkSchedules { get; set; }
     }
 }

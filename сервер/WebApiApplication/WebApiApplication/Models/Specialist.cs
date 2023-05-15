@@ -10,6 +10,7 @@ namespace WebApiApplication.Models
         public string? Description { get; set; }
         public List<Service>? Services { get; private set; }
         public Category? Category { get; set; }
+        public List<WorkSchedule>? WorkSchedules { get; set; }
         public Specialist(string name, string phone, string password, bool isSpecialist, string nameCategory, string address) : base(name, phone, password, isSpecialist)
         {
             Name = name;

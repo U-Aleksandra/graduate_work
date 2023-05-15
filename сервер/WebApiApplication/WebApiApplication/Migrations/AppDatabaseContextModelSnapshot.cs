@@ -69,8 +69,8 @@ namespace WebApiApplication.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<DateTime>("BreakTime")
-                        .HasColumnType("datetime2");
+                    b.Property<TimeSpan>("BreakTime")
+                        .HasColumnType("time");
 
                     b.Property<string>("DescriptionService")
                         .HasColumnType("nvarchar(max)");
@@ -81,8 +81,8 @@ namespace WebApiApplication.Migrations
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(20, 0)");
 
-                    b.Property<DateTime>("ServicesTime")
-                        .HasColumnType("datetime2");
+                    b.Property<TimeSpan>("ServicesTime")
+                        .HasColumnType("time");
 
                     b.Property<int?>("SpecialistId")
                         .HasColumnType("int");
@@ -134,6 +134,39 @@ namespace WebApiApplication.Migrations
                     b.UseTphMappingStrategy();
                 });
 
+            modelBuilder.Entity("WebApiApplication.Models.WorkSchedule", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("Date");
+
+                    b.Property<TimeSpan>("EndBreak")
+                        .HasColumnType("time");
+
+                    b.Property<TimeSpan>("EndWork")
+                        .HasColumnType("time");
+
+                    b.Property<int?>("SpecialistId")
+                        .HasColumnType("int");
+
+                    b.Property<TimeSpan>("StartBreak")
+                        .HasColumnType("time");
+
+                    b.Property<TimeSpan>("StartWork")
+                        .HasColumnType("time");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("SpecialistId");
+
+                    b.ToTable("WorkSchedules");
+                });
+
             modelBuilder.Entity("WebApiApplication.Models.Specialist", b =>
                 {
                     b.HasBaseType("WebApiApplication.Models.User");
@@ -180,6 +213,15 @@ namespace WebApiApplication.Migrations
                     b.Navigation("Specialist");
                 });
 
+            modelBuilder.Entity("WebApiApplication.Models.WorkSchedule", b =>
+                {
+                    b.HasOne("WebApiApplication.Models.Specialist", "Specialist")
+                        .WithMany("WorkSchedules")
+                        .HasForeignKey("SpecialistId");
+
+                    b.Navigation("Specialist");
+                });
+
             modelBuilder.Entity("WebApiApplication.Models.Specialist", b =>
                 {
                     b.HasOne("WebApiApplication.Models.Category", "Category")
@@ -204,6 +246,8 @@ namespace WebApiApplication.Migrations
             modelBuilder.Entity("WebApiApplication.Models.Specialist", b =>
                 {
                     b.Navigation("Services");
+
+                    b.Navigation("WorkSchedules");
                 });
 #pragma warning restore 612, 618
         }

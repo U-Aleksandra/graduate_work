@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="graduate_work.PageCreateWorkSchedule">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Сохранить"
+                 Order="Primary"
+                 Priority="0"
+                 Clicked="saveWorkSchedule_Clicked"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout Margin="25,30,25,0" Spacing="10">
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Дата рабочего дня" FontFamily="Roboto" FontSize="18" VerticalOptions="Center" Margin="5,0,0,0"></Label>
+                <DatePicker x:Name="datePiker" Format="D">
+                    
+                </DatePicker>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Начало рабочего дня" FontFamily="Roboto" FontSize="18" VerticalOptions="Center" Margin="5,0,0,0"></Label>
+                <TimePicker x:Name="timePickerStartWork" Time="09:00:00" Format = "HH:mm"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Конец рабочего дня" FontFamily="Roboto" FontSize="18" VerticalOptions="Center" Margin="5,0,0,0"></Label>
+                <TimePicker x:Name="timePickerEndWork" Time="18:00:00" Format = "HH:mm" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Начало перерыва" FontFamily="Roboto" FontSize="18" VerticalOptions="Center" Margin="5,0,0,0"></Label>
+                <TimePicker x:Name="timePickerStartBreak" Time="13:00:00" Format = "HH:mm" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Конец перерыва" FontFamily="Roboto" FontSize="18" VerticalOptions="Center" Margin="5,0,0,0"></Label>
+                <TimePicker x:Name="timePickerEndBreak" Time="14:00:00" Format = "HH:mm" />
+            </StackLayout>
+            <Label x:Name="errorBreak" TextColor="Red" FontFamily="Roboto"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

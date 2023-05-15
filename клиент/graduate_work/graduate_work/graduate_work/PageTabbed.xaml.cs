@@ -26,6 +26,7 @@ namespace graduate_work
             if(user is Specialist specialist)
             {
                 Children.Add(new PageServices(specialist));
+                Children.Add(new PageWorkSchedule(specialist));
             }
         }
     }

@@ -11,12 +11,12 @@ namespace graduate_work.Models
         public string DescriptionService { get; set; } = null;
         public decimal Price { get; set; }
         public bool StartPrice { get; set; }
-        public DateTime ServicesTime { get; set; }
-        public DateTime BreakTime { get; set; }
+        public TimeSpan ServicesTime { get; set; }
+        public TimeSpan BreakTime { get; set; }
         public NameService NameService { get; set; } = null;
         public Specialist Specialist { get; set; } = null;
 
-        public Service(string descriptionService, decimal price, bool startPrice, DateTime servicesTime, DateTime breakTime)
+        public Service(string descriptionService, decimal price, bool startPrice, TimeSpan servicesTime, TimeSpan breakTime)
         {
             DescriptionService = descriptionService;
             Price = price;

@@ -75,13 +75,13 @@ namespace graduate_work
             {
                 decimal price;
                 Decimal.TryParse(entryPrice.Text, out price);
-                DateTime timeService;
-                DateTime.TryParse(timePickerService.Time.ToString(), out timeService);
-                DateTime timeBreak;
-                DateTime.TryParse(timePickerBreak.Time.ToString(), out timeBreak);
+                /*TimeSpan timeService;
+                TimeSpan.TryParse(timePickerService.Time.ToString(), out timeService);
+                TimeSpan timeBreak;
+                TimeSpan.TryParse(timePickerBreak.Time.ToString(), out timeBreak);*/
                 NameService nameService = listNameServices.FirstOrDefault(l => l.nameService == pickerService.Items[pickerService.SelectedIndex]);
 
-                JsonContent content = JsonContent.Create(new Service(entryNameServise.Text, price, checkBoxPrice.IsChecked, timeService, timeBreak)
+                JsonContent content = JsonContent.Create(new Service(entryNameServise.Text, price, checkBoxPrice.IsChecked, timePickerService.Time, timePickerBreak.Time)
                 {
                     NameService = nameService,
                     Specialist = localSpecialist

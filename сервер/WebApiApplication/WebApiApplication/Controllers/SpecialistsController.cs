@@ -121,5 +121,24 @@ namespace WebApiApplication.Controllers
             }
             return BadRequest("Данные не сохранились");
         }
+
+        [HttpPost("CreateWorkSchedule")]
+        public async Task<IActionResult> CreateWorkSchedule(WorkSchedule workSchedule)
+        {
+            if(workSchedule != null)
+            {
+                if(await _adp.WorkSchedules.FirstOrDefaultAsync(w => w.Date == workSchedule.Date) == null)
+                {
+                    Specialist? specialist = await _adp.Specialists.FirstOrDefaultAsync(s => s.Id == workSchedule.Specialist.Id);
+                    workSchedule.Specialist = null;
+                    await _adp.WorkSchedules.AddAsync(workSchedule);
+                    workSchedule.Specialist = specialist;
+                    _adp.SaveChanges();
+                    return Ok("Рабочий день создан");
+                }
+                return BadRequest("На выбранную дату уже создан рабочий день");
+            }
+            return BadRequest("Данные не сохранились");
+        }
     }
 }

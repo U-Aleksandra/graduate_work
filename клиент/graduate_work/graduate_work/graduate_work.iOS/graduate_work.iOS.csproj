@@ -180,4 +180,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\logoResnicy.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\outline_calendar_month_white_24dp.png" />
+  </ItemGroup>
 </Project>

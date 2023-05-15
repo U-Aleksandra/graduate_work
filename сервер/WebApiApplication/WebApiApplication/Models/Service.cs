@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WebApiApplication.Models
@@ -11,12 +12,16 @@ namespace WebApiApplication.Models
         [Column(TypeName = "decimal(20, 0)")]
         public decimal Price { get; set; }
         public bool StartPrice { get; set; }
-        public DateTime ServicesTime { get; set; }
-        public DateTime BreakTime { get; set; }
+
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:HH:mm}")]
+        public TimeSpan ServicesTime { get; set; }
+
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:HH:mm}")]
+        public TimeSpan BreakTime { get; set; }
         public NameService? NameService { get; set; }
         public Specialist? Specialist { get;  set; }
 
-        public Service(string descriptionService, decimal price, bool startPrice, DateTime servicesTime, DateTime breakTime)
+        public Service(string descriptionService, decimal price, bool startPrice, TimeSpan servicesTime, TimeSpan breakTime)
         {
             DescriptionService = descriptionService;
             Price = price;

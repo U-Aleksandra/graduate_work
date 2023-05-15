@@ -112,8 +112,7 @@ namespace WebApiApplication.Controllers
         [HttpGet("GetServicesByName")]
         public async Task<IActionResult> GetServicesByName(int nameServisesId)
         {
-            var nameServices = await _adp.NameServices.FirstOrDefaultAsync(ns => ns.Id == nameServisesId);
-
+            var nameServices = await _adp.NameServices.Include(s => s.Services).FirstOrDefaultAsync(ns => ns.Id == nameServisesId);
             if (nameServices.Services != null)
             {
                 foreach (var item in nameServices.Services)

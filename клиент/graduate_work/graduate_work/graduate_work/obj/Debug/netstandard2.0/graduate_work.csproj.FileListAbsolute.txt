@@ -73,3 +73,5 @@ D:\Code\C#\graduate\graduate_work\клиент\graduate_work\graduate_work\gradu
 D:\Code\C#\graduate\graduate_work\клиент\graduate_work\graduate_work\graduate_work\obj\Debug\netstandard2.0\refint\graduate_work.dll
 D:\Code\C#\graduate\graduate_work\клиент\graduate_work\graduate_work\graduate_work\obj\Debug\netstandard2.0\graduate_work.pdb
 D:\Code\C#\graduate\graduate_work\клиент\graduate_work\graduate_work\graduate_work\obj\Debug\netstandard2.0\ref\graduate_work.dll
+D:\Code\C#\graduate\graduate_work\клиент\graduate_work\graduate_work\graduate_work\obj\Debug\netstandard2.0\PageCreateWorkSchedule.xaml.g.cs
+D:\Code\C#\graduate\graduate_work\клиент\graduate_work\graduate_work\graduate_work\obj\Debug\netstandard2.0\PageWorkSchedule.xaml.g.cs
