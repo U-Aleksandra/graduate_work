@@ -127,7 +127,7 @@ namespace WebApiApplication.Controllers
         {
             if(workSchedule != null)
             {
-                if(await _adp.WorkSchedules.FirstOrDefaultAsync(w => w.Date == workSchedule.Date) == null)
+                if (await _adp.WorkSchedules.FirstOrDefaultAsync(w => w.Date == workSchedule.Date && w.Specialist.Id == workSchedule.Specialist.Id) == null)
                 {
                     Specialist? specialist = await _adp.Specialists.FirstOrDefaultAsync(s => s.Id == workSchedule.Specialist.Id);
                     workSchedule.Specialist = null;
@@ -139,6 +139,17 @@ namespace WebApiApplication.Controllers
                 return BadRequest("На выбранную дату уже создан рабочий день");
             }
             return BadRequest("Данные не сохранились");
+        }
+
+        [HttpGet("GetWorkShedule")]
+        public async Task<IActionResult> GetWorkShedule(int specialistId)
+        {
+            List<WorkSchedule> listWorkSchedule = _adp.WorkSchedules.Where(w => w.Specialist.Id == specialistId).ToList();
+            if (listWorkSchedule.Any())
+            {
+                return Ok(listWorkSchedule);
+            }
+            else return NoContent();
         }
     }
 }
