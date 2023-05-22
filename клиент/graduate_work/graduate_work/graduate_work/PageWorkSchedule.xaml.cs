@@ -28,72 +28,11 @@ namespace graduate_work
                 if (response.StatusCode == HttpStatusCode.OK)
                 {
                     List<WorkSchedule> listWorkSchedule = response.Content.ReadFromJsonAsync<List<WorkSchedule>>().Result;
-                    ListView listViewWorkSchedule = new ListView()
+                    if (listWorkSchedule.Any())
                     {
-                        HasUnevenRows = true,
-                        ItemsSource = listWorkSchedule,
-                        ItemTemplate = new DataTemplate(() =>
-                        {
-                            Label labelDate = new Label { FontSize = 16, FontFamily = "Roboto", TextColor = Color.FromHex("#5147AC"), Text = "Дата" };
-                            Label date = new Label { FontSize = 16, FontFamily = "Roboto", TextColor = Color.Black };
-                            date.SetBinding(Label.TextProperty, "Date");
-
-                            Label labelStartWork = new Label { FontSize = 16, FontFamily = "Roboto", TextColor = Color.FromHex("#5147AC"), Text = "Начало рабочего дня" };
-                            Label startWork = new Label { FontSize = 16, FontFamily = "Roboto", TextColor = Color.Black };
-                            startWork.SetBinding(Label.TextProperty, "StartWork");
-
-                            Label labelEndWork = new Label { FontSize = 16, FontFamily = "Roboto", TextColor = Color.FromHex("#5147AC"), Text = "Конец рабочего дня" };
-                            Label endWork = new Label { FontSize = 16, FontFamily = "Roboto", TextColor = Color.Black };
-                            endWork.SetBinding(Label.TextProperty, "EndWork");
-
-                            Label labelStartBreak = new Label { FontSize = 16, FontFamily = "Roboto", TextColor = Color.FromHex("#5147AC"), Text = "Начало перерыва" };
-                            Label startBreak = new Label { FontSize = 16, FontFamily = "Roboto", TextColor = Color.Black };
-                            startBreak.SetBinding(Label.TextProperty, "StartBreak");
-
-                            Label labelEndBreak = new Label { FontSize = 16, FontFamily = "Roboto", TextColor = Color.FromHex("#5147AC"), Text = "Конец перерыва" };
-                            Label endBreak = new Label { FontSize = 16, FontFamily = "Roboto", TextColor = Color.Black };
-                            endBreak.SetBinding(Label.TextProperty, "EndBreak");
-
-                            return new ViewCell
-                            {
-                                View = new StackLayout
-                                {
-                                    Padding = new Thickness(10, 10),
-                                    Orientation = StackOrientation.Vertical,
-                                    Children = {
-                                        new StackLayout
-                                        {
-                                            Orientation= StackOrientation.Horizontal,
-                                            Children = { labelDate, date}
-                                        },
-                                        new StackLayout
-                                        {
-                                            Orientation= StackOrientation.Horizontal,
-                                            Children = { labelStartWork, startWork }
-                                        },
-                                        new StackLayout
-                                        {
-                                            Orientation= StackOrientation.Horizontal,
-                                            Children = { labelEndWork, endWork }
-                                        },
-                                        new StackLayout
-                                        {
-                                            Orientation= StackOrientation.Horizontal,
-                                            Children = { labelStartBreak, startBreak }
-                                        },
-                                        new StackLayout
-                                        {
-                                            Orientation= StackOrientation.Horizontal,
-                                            Children = { labelEndBreak, endBreak }
-                                        }
-                                    }
-                                }
-                            };
-                        })
-                    };
-                    ScrollView scrollView = new ScrollView();
-                    scrollView.Content = new StackLayout { Children = { listViewWorkSchedule } };
-                    this.Content = scrollView;
+                        listViewWorkSchedule.ItemsSource = listWorkSchedule;
+                        BindingContext = this;
+                    }
                 }
             }
         }

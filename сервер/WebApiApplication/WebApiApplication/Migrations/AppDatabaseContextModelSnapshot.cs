@@ -22,6 +22,41 @@ namespace WebApiApplication.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("WebApiApplication.Models.Appointments", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("DateApointment")
+                        .HasColumnType("Date");
+
+                    b.Property<TimeSpan>("EndTime")
+                        .HasColumnType("time");
+
+                    b.Property<string>("Note")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("SpecialistId")
+                        .HasColumnType("int");
+
+                    b.Property<TimeSpan>("StartTime")
+                        .HasColumnType("time");
+
+                    b.Property<int?>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("SpecialistId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Appointments");
+                });
+
             modelBuilder.Entity("WebApiApplication.Models.Category", b =>
                 {
                     b.Property<int>("Id")
@@ -32,7 +67,7 @@ namespace WebApiApplication.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(100)");
 
                     b.HasKey("Id");
 
@@ -52,7 +87,7 @@ namespace WebApiApplication.Migrations
 
                     b.Property<string>("nameService")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(100)");
 
                     b.HasKey("Id");
 
@@ -112,15 +147,15 @@ namespace WebApiApplication.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("Password")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("Phone")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(16)");
 
                     b.Property<bool>("isSpecialist")
                         .HasColumnType("bit");
@@ -173,7 +208,7 @@ namespace WebApiApplication.Migrations
 
                     b.Property<string>("Address")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(255)");
 
                     b.Property<int?>("CategoryId")
                         .HasColumnType("int");
@@ -182,11 +217,26 @@ namespace WebApiApplication.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("NameCategory")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(100)");
 
                     b.HasIndex("CategoryId");
 
                     b.HasDiscriminator().HasValue("Specialist");
+                });
+
+            modelBuilder.Entity("WebApiApplication.Models.Appointments", b =>
+                {
+                    b.HasOne("WebApiApplication.Models.Specialist", "Specialist")
+                        .WithMany()
+                        .HasForeignKey("SpecialistId");
+
+                    b.HasOne("WebApiApplication.Models.User", "User")
+                        .WithMany("Appointments")
+                        .HasForeignKey("UserId");
+
+                    b.Navigation("Specialist");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("WebApiApplication.Models.NameService", b =>
@@ -241,6 +291,11 @@ namespace WebApiApplication.Migrations
             modelBuilder.Entity("WebApiApplication.Models.NameService", b =>
                 {
                     b.Navigation("Services");
+                });
+
+            modelBuilder.Entity("WebApiApplication.Models.User", b =>
+                {
+                    b.Navigation("Appointments");
                 });
 
             modelBuilder.Entity("WebApiApplication.Models.Specialist", b =>

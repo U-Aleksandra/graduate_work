@@ -28,39 +28,11 @@ namespace graduate_work
                 if(response.StatusCode == HttpStatusCode.OK)
                 {
                     List<Service> listServices = response.Content.ReadFromJsonAsync<List<Service>>().Result;
-                    ListView listService = new ListView()
+                    if (listServices.Any())
                     {
-                        HasUnevenRows = true,
-                        ItemsSource = listServices.Select(s => new { s.NameService.nameService, s.Price, s.StartPrice, s.ServicesTime }),
-                        ItemTemplate = new DataTemplate(() =>
-                        {
-                            Label labelNameService = new Label { FontSize = 16, FontFamily = "Roboto", TextColor = Color.FromHex("#5147AC") };
-                            labelNameService.SetBinding(Label.TextProperty, "nameService");
-
-                            Label labelPrice = new Label { FontSize = 16, FontFamily = "Roboto", TextColor = Color.FromHex("#5147AC") };
-                            labelPrice.SetBinding(Label.TextProperty, "Price");
-
-                            Label labelStartPrice = new Label { FontSize = 16, FontFamily = "Roboto", TextColor = Color.FromHex("#5147AC") };
-                            labelStartPrice.SetBinding(Label.TextProperty, "StartPrice");
-
-                            Label labelServiseTime = new Label { FontSize = 16, FontFamily = "Roboto", TextColor = Color.FromHex("#5147AC"), FormattedText = "{0:h:mm tt}" };
-                            labelServiseTime.SetBinding(Label.TextProperty, "ServicesTime");
-
-                            Label labelDescription = new Label { FontSize = 16, FontFamily = "Roboto", TextColor = Color.FromHex("#5147AC") };
-                            labelDescription.SetBinding(Label.TextProperty, "DescriptionService");
-
-                            return new ViewCell
-                            {
-                                View = new StackLayout
-                                {
-                                    Padding = new Thickness(10, 10),
-                                    Orientation = StackOrientation.Vertical,
-                                    Children = { labelNameService, labelStartPrice, labelPrice, labelServiseTime, labelDescription }
-                                }
-                            };
-                        })
-                    };
-                    this.Content = new StackLayout { Children = { listService } };
+                        listViewService.ItemsSource = listServices.Select(s => new { s.NameService.nameService, s.Price, s.StartPrice, s.ServicesTime, s.DescriptionService });
+                        BindingContext = this;
+                    }
                 }
             }
         }

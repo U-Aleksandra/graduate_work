@@ -8,6 +8,10 @@ namespace graduate_work.Models
     {
         public int Id { get; set; }
         public DateTime Date { get; set; }
+       /* {
+            get => Date.Date;
+            set => Date = value.Date; 
+        }*/
         public TimeSpan StartWork { get; set; }
         public TimeSpan EndWork { get; set; }
         public TimeSpan StartBreak { get; set; }

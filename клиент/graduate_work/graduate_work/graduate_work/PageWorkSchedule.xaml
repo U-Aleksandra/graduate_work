@@ -10,4 +10,43 @@
                  Priority="0" 
                  Clicked="createWorkSchedule_Clicked"/>
     </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <ListView x:Name="listViewWorkSchedule"
+                      HasUnevenRows="True">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.View>
+                                    <StackLayout Padding="10,10" Orientation = "Vertical">
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="Дата" FontSize="16" FontFamily = "Roboto" TextColor="#5147AC"/>
+                                            <Label Text="{Binding Date, StringFormat='{0:dd-MM-yyyy}'}"  FontSize="16" FontFamily = "Roboto" TextColor= "Black"/>
+                                        </StackLayout>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="Начало рабочего дня" FontSize="16" FontFamily = "Roboto" TextColor="#5147AC"/>
+                                            <Label Text="{Binding StartWork}" FontSize="16" FontFamily = "Roboto" TextColor= "Black"/>
+                                        </StackLayout>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="Конец рабочего дня" FontSize="16" FontFamily = "Roboto" TextColor="#5147AC"/>
+                                            <Label Text="{Binding EndWork}" FontSize="16" FontFamily = "Roboto" TextColor= "Black"/>
+                                        </StackLayout>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="Начало перерыва" FontSize="16" FontFamily = "Roboto" TextColor="#5147AC"/>
+                                            <Label Text="{Binding StartBreak}" FontSize="16" FontFamily = "Roboto" TextColor= "Black"/>
+                                        </StackLayout>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="Конец перерыва" FontSize="16" FontFamily = "Roboto" TextColor="#5147AC"/>
+                                            <Label Text="{Binding EndBreak}" FontSize="16" FontFamily = "Roboto" TextColor= "Black"/>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </ViewCell.View>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
 </ContentPage>

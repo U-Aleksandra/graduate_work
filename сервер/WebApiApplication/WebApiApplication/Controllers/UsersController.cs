@@ -135,6 +135,28 @@ namespace WebApiApplication.Controllers
             else return NoContent();
         }
 
+        [HttpGet("GetWorkDays")]
+        public async Task<IActionResult> GetWorkDays(int idSpecialist)
+        {
+            List<WorkSchedule> listWorkSchedule = _adp.WorkSchedules.Where(w => w.Specialist.Id == idSpecialist && w.Date >= DateTime.Today).ToList();
+            if (listWorkSchedule.Any())
+            {
+                return Ok(listWorkSchedule);
+            }
+            else return NoContent();
+        }
+
+        [HttpGet("GetOfFreeTime")]
+        public async Task<IActionResult> GetOfFreeTime(int idSpecialist)
+        {
+            List<WorkSchedule> listWorkSchedule = _adp.WorkSchedules.Where(w => w.Specialist.Id == idSpecialist && w.Date >= DateTime.Today).ToList();
+            if(listWorkSchedule.Any())
+            {
+                return Ok(listWorkSchedule);
+            }
+            else return NoContent();
+        }
+
         // DELETE api/<ValuesController>/5
         [HttpDelete("{id}")]
         public void Delete(int id)
