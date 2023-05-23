@@ -5,7 +5,8 @@
     <ContentPage.Content>
         <StackLayout>
             <ListView x:Name="listViewService"
-                      HasUnevenRows="True">
+                      HasUnevenRows="True"
+                      ItemSelected="listViewService_ItemSelected">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>

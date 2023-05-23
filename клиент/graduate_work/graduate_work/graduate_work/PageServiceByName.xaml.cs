@@ -18,9 +18,39 @@ namespace graduate_work
             InitializeComponent();
             if (services.Any())
             {
-                listViewService.ItemsSource = services.Select(s => new { s.NameService.nameService, s.Price, s.StartPrice, s.Specialist.Name, s.Specialist.Address });
+                List<SelectService> localListService = ServicesParse(services);
+                listViewService.ItemsSource = localListService;
                 BindingContext = this;
             }
         }
+        private async void listViewService_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            SelectService itemService = e.SelectedItem as SelectService;
+            if (itemService != null)
+            {
+                await Navigation.PushAsync(new PageWorkDays(itemService.Id));
+            }
+        }
+        private List<SelectService> ServicesParse(List<Service> services)
+        {
+            List<SelectService> selectServices = new List<SelectService>();
+            foreach (var service in services)
+            {
+                selectServices.Add(new SelectService()
+                {
+                    Id = service.Specialist.Id,
+                    nameService = service.NameService.nameService,
+                    Price = service.Price,
+                    StartPrice = service.StartPrice,
+                    ServicesTime = service.ServicesTime,
+                    BreakTime = service.BreakTime,
+                    Name = service.Specialist.Name,
+                    Address = service.Specialist.Address
+
+                });
+            }
+            return selectServices;
+        }
     }
+
 }
