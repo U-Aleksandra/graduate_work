@@ -6,6 +6,8 @@ using Newtonsoft;
 using Newtonsoft.Json;
 using System.Numerics;
 using Microsoft.EntityFrameworkCore;
+using System.Linq;
+using Microsoft.VisualBasic;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -147,14 +149,88 @@ namespace WebApiApplication.Controllers
         }
 
         [HttpGet("GetOfFreeTime")]
-        public async Task<IActionResult> GetOfFreeTime(int idSpecialist)
+        public async Task<IActionResult> GetOfFreeTime(DateTime dateWork, int idSpecialist, TimeSpan serviceTime, TimeSpan serviceBreak)
         {
-            List<WorkSchedule> listWorkSchedule = _adp.WorkSchedules.Where(w => w.Specialist.Id == idSpecialist && w.Date >= DateTime.Today).ToList();
-            if(listWorkSchedule.Any())
+            TimeSpan intervalTime = new(0, 0, 5, 0, 0);
+            TimeSpan fullTime = serviceTime + serviceBreak;
+            List<TimeSpan> listTimeBreak = new();
+            List<Tuple<TimeSpan, bool>> listTimeWork = new();
+            List<TimeSpan> listServiceTime = new();
+            List<TimeSpan> listFreeTime = new();
+
+            WorkSchedule? workSchedule = await _adp.WorkSchedules.FirstOrDefaultAsync(w => w.Date == dateWork && w.Specialist.Id == idSpecialist);
+            //разбиение рабочего графика на промежутки
+            if(workSchedule.StartWork.ToString() != "00:00:00" && workSchedule.EndWork.ToString() != "00:00:00")
             {
-                return Ok(listWorkSchedule);
+                listTimeWork.Add(new Tuple<TimeSpan, bool>(workSchedule.StartWork, true));
+                while (workSchedule.StartWork != workSchedule.EndWork)
+                {
+                    workSchedule.StartWork += intervalTime;
+                    listTimeWork.Add(new Tuple<TimeSpan, bool>(workSchedule.StartWork, true));
+                }
+                listTimeWork.RemoveAt(listTimeWork.Count - 1);
             }
-            else return NoContent();
+            //разбиение обеденного перерыва на промежутки
+            if (workSchedule.StartBreak.ToString() != "00:00:00" && workSchedule.EndBreak.ToString() != "00:00:00")
+            {
+                listTimeBreak.Add(workSchedule.StartBreak);
+                while (workSchedule.StartBreak != workSchedule.EndBreak)
+                {
+                    workSchedule.StartBreak += intervalTime;
+                    listTimeBreak.Add(workSchedule.StartBreak);
+                }
+                listTimeBreak.RemoveAt(listTimeBreak.Count - 1);
+            }
+            //разбиение занятых окошек на промежутки
+            List<Appointments> listAppointments = _adp.Appointments.Where(a => a.DateApointment == dateWork && a.Specialist.Id == idSpecialist).ToList();
+            List<TimeSpan> listBusyTime = new();
+            foreach (var item in listAppointments)
+            {
+                listBusyTime.Add(item.StartTime);
+                while (item.StartTime != item.EndTime)
+                {
+                    item.StartTime += intervalTime;
+                    listBusyTime.Add(item.StartTime);
+                }
+                listBusyTime.RemoveAt(listBusyTime.Count - 1);
+            }
+            //разбиение продолжительность услуги на промежутки
+            TimeSpan startTime = new(0, 0, 0);
+            if(fullTime.ToString() != "00:00:00")
+            {
+                listServiceTime.Add(startTime);
+                while (startTime != fullTime)
+                {
+                    startTime += intervalTime;
+                    listServiceTime.Add(startTime);
+                }
+                listServiceTime.RemoveAt(listServiceTime.Count - 1);
+            }
+
+            for (var i = 0; i < listTimeWork.Count; i++)
+            {
+                if (listTimeBreak.Contains(listTimeWork[i].Item1) || listBusyTime.Contains(listTimeWork[i].Item1))
+                {
+                    listTimeWork[i] = new Tuple<TimeSpan, bool>(listTimeWork[i].Item1, false);
+                }
+            };
+
+            for (var i = 0; i < listTimeWork.Count; i++)
+            {
+                int count = 0;
+                for (var j = i; j < listTimeWork.Count; j++)
+                {
+                    if (listTimeWork[j].Item2) count++;
+                    else break;
+
+                    if (count == listServiceTime.Count)
+                    {
+                        listFreeTime.Add(listTimeWork[i].Item1);
+                        break;
+                    }
+                }
+            }
+            return Ok(listFreeTime);  
         }
 
         // DELETE api/<ValuesController>/5
