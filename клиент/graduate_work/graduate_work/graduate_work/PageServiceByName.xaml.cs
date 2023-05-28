@@ -13,11 +13,13 @@ namespace graduate_work
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PageServiceByName : ContentPage
     {
-        public PageServiceByName(List<Service> services)
+        private User localUser;
+        public PageServiceByName(List<Service> services, User user)
         {
             InitializeComponent();
             if (services.Any())
             {
+                localUser = user;
                 List<SelectService> localListService = ServicesParse(services);
                 listViewService.ItemsSource = localListService;
                 BindingContext = this;
@@ -28,7 +30,7 @@ namespace graduate_work
             SelectService itemService = e.SelectedItem as SelectService;
             if (itemService != null)
             {
-                await Navigation.PushAsync(new PageWorkDays(itemService.Id));
+                await Navigation.PushAsync(new PageWorkDays(itemService, localUser));
             }
         }
         private List<SelectService> ServicesParse(List<Service> services)
@@ -38,7 +40,7 @@ namespace graduate_work
             {
                 selectServices.Add(new SelectService()
                 {
-                    Id = service.Specialist.Id,
+                    specialist = service.Specialist,
                     nameService = service.NameService.nameService,
                     Price = service.Price,
                     StartPrice = service.StartPrice,

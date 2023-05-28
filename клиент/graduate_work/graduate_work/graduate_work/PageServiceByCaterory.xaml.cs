@@ -20,9 +20,11 @@ namespace graduate_work
         private readonly string urlSearchByCategory = $"https://{apiConfig.url}:7113/api/Users/GetServicesByCategory";
         private readonly string urlSearchByName = $"https://{apiConfig.url}:7113/api/Users/GetServicesByName";
         private List<NameService> localListNameService;
-        public PageServiceByCaterory(int categoryId, string nameCategory)
+        private User localUser;
+        public PageServiceByCaterory(int categoryId, string nameCategory, User user)
         {
             InitializeComponent();
+            localUser = user;
             this.Title = nameCategory;
             var response = apiConfig.client.GetAsync(urlSearchByCategory + $"?categoryId={categoryId}").Result;
             List<NameService> listNameServices = response.Content.ReadFromJsonAsync<List<NameService>>().Result;
@@ -37,7 +39,7 @@ namespace graduate_work
             int nameServicesId = nameServices.Id;
             var response = await apiConfig.client.GetAsync(urlSearchByName + $"?nameServisesId={nameServicesId}");
             List<Service> services = JsonConvert.DeserializeObject<List<Service>>(response.Content.ReadAsStringAsync().Result);
-            await Navigation.PushAsync(new PageServiceByName(services));
+            await Navigation.PushAsync(new PageServiceByName(services, localUser));
         }
     }
 }

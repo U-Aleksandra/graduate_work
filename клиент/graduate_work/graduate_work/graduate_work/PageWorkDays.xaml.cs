@@ -17,17 +17,35 @@ namespace graduate_work
     public partial class PageWorkDays : ContentPage
     {
         private readonly string urlWorkDays = $"https://{apiConfig.url}:7113/api/Users/GetWorkDays";
-        public PageWorkDays(int idSpecialist)
+        private readonly string urlFreeTime = $"https://{apiConfig.url}:7113/api/Users/GetOfFreeTime";
+        private SelectService localSelectService;
+        private User localUser;
+        public PageWorkDays(SelectService selectService, User user)
         {
             InitializeComponent();
-            var response = apiConfig.client.GetAsync(urlWorkDays + $"?idSpecialist={idSpecialist}").Result;
+            localSelectService = selectService;
+            localUser = user;
+            var response = apiConfig.client.GetAsync(urlWorkDays + $"?idSpecialist={selectService.specialist.Id}").Result;
             if(response.StatusCode == HttpStatusCode.OK)
             {
                 List<WorkSchedule> listWorkDays = response.Content.ReadFromJsonAsync<List<WorkSchedule>>().Result;
                 if (listWorkDays.Any())
                 {
-                    listViewWorkDays.ItemsSource = listWorkDays;
+                    listViewWorkDays.ItemsSource = listWorkDays.Select(l => l.Date);
                 }
+            }
+        }
+
+        private async void listViewWorkDays_SelectedItem(object sender, SelectedItemChangedEventArgs e)
+        {
+            string dateString = e.SelectedItem.ToString();
+            DateTime date = DateTime.Parse(dateString);
+            var response = apiConfig.client.GetAsync(urlFreeTime + $"?dateWork={date.Date}&idSpecialist={localSelectService.specialist.Id}" +
+                $"&serviceTime={localSelectService.ServicesTime}&serviceBreak={localSelectService.BreakTime}").Result;
+            if (response.StatusCode == HttpStatusCode.OK)
+            {
+                List<TimeSpan> listFreeTime = response.Content.ReadFromJsonAsync<List<TimeSpan>>().Result;
+                await Navigation.PushAsync(new PageFreeTime(listFreeTime, date, localSelectService, localUser));
             }
         }
     }

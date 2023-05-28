@@ -6,7 +6,8 @@
         <StackLayout>
             <Label Text="Рабочие дни" TextColor="#5147AC" FontSize="18" FontFamily="Roboto" HorizontalOptions="Center" Padding="0,10,0,0"/>
             <ListView x:Name="listViewWorkDays"
-                      HasUnevenRows="True">
+                      HasUnevenRows="True"
+                      ItemSelected="listViewWorkDays_SelectedItem">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>

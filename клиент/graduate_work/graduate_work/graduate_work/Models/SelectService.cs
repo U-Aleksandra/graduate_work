@@ -6,7 +6,7 @@ namespace graduate_work.Models
 {
     public class SelectService
     {
-        public int Id { get; set; }
+        public Specialist specialist { get; set; }
         public string nameService { get; set; }
         public decimal Price { get; set; }
         public bool StartPrice { get; set; }

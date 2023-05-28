@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="graduate_work.PageFreeTime">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Свободное время" TextColor="#5147AC" FontSize="18" FontFamily="Roboto" HorizontalOptions="Center" Padding="0,10,0,0"/>
+            <ListView x:Name="listViewFreeTime"
+                      HasUnevenRows="True"
+                      ItemSelected="listViewFreeTime_ItemSelected">
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

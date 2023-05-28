@@ -8,6 +8,7 @@ using System.Numerics;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using Microsoft.VisualBasic;
+using System.Runtime.Intrinsics.Arm;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -233,6 +234,41 @@ namespace WebApiApplication.Controllers
             return Ok(listFreeTime);  
         }
 
+        [HttpPost("CreateAppointment")]
+        public async Task<IActionResult> CreateAppointment(Appointments appointments)
+        {
+            Specialist? specialist = await _adp.Specialists.FirstOrDefaultAsync(s => s.Id == appointments.Specialist.Id);
+            User? user = await _adp.Users.FirstOrDefaultAsync(u => u.Id == appointments.User.Id);
+            if(specialist.Id == user.Id)
+            {
+                return BadRequest("Специалист не может записаться к себе");
+            }
+            if(specialist != null && user != null)
+            {
+                /*appointments.Specialist = null;
+                appointments.User = null;
+                _adp.Appointments.Add(appointments);
+                appointments.Specialist = specialist;
+                appointments.User = user;
+                _adp.SaveChanges();
+                return Ok("Запись создана");*/
+                //var item = _adp.Appointments.FirstOrDefaultAsync(a => a.DateApointment == appointments.DateApointment &&
+                    //a.StartTime == appointments.StartTime && a.User.Id == appointments.User.Id);
+                if (await _adp.Appointments.FirstOrDefaultAsync(a => a.DateApointment == appointments.DateApointment &&
+                    a.StartTime == appointments.StartTime && a.User.Id == appointments.User.Id) == null)
+                {
+                    appointments.Specialist = null;
+                    appointments.User = null;
+                    _adp.Appointments.Add(appointments);
+                    appointments.Specialist = specialist;
+                    appointments.User = user;
+                    _adp.SaveChanges();
+                    return Ok("Запись создана");
+                }
+                else return BadRequest("У пользователя уже есть запись на это время");
+            }
+            return BadRequest();
+        }
         // DELETE api/<ValuesController>/5
         [HttpDelete("{id}")]
         public void Delete(int id)
