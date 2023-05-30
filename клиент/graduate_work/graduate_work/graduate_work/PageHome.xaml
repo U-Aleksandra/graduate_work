@@ -9,7 +9,7 @@
             <Image Source="background.jpg"/>
             <Label Text="Категории  9" FontFamily="Roboto" TextColor="#5147AC" FontSize="20" Margin="20,0,0,0" VerticalOptions="Center"></Label>
             <ScrollView Orientation="Horizontal">
-                <Grid>
+                <Grid HeightRequest="240">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="170"/>
                         <ColumnDefinition Width="170"/>
@@ -33,6 +33,33 @@
                     <ImageButton Source="logoMassag.jpg" Grid.Column="3" Grid.Row="1" Clicked="ImageButtonMassag_Clicked"/>
                 </Grid>
             </ScrollView>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Специалисты" FontFamily="Roboto" TextColor="#5147AC" FontSize="20" Margin="20,0,0,0" VerticalOptions="Center"/>
+                <Label Text="Все" FontFamily="Roboto" TextColor="#5147AC" FontSize="20" Margin="190,0,0,0" VerticalOptions="Center">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </StackLayout>
+            <ListView x:Name="listViewSpecialist"
+                      HasUnevenRows="True"
+                      Margin="20,0,0,0">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <StackLayout Padding="10,10" Orientation = "Vertical">
+                                    <Label Text="{Binding Name}" FontSize="16" FontFamily = "Roboto" TextColor="#5147AC"/>
+                                    <Label Text="{Binding NameCategory, StringFormat='Специализация: {0}'} }" FontSize="16" FontFamily = "Roboto" TextColor="#5147AC"/>
+                                    <Label Text="{Binding Phone, StringFormat='Номер телефона: {0}'}" FontSize="16" FontFamily = "Roboto" TextColor="#5147AC"/>
+                                    <Label Text="{Binding Address, StringFormat='Адрес: {0}'}" FontSize="16" FontFamily = "Roboto" TextColor="#5147AC"/>
+                                    <Label Text="{Binding Description}" FontSize="16" FontFamily = "Roboto" TextColor="#5147AC"/>
+                                </StackLayout>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ScrollView>
 </ContentPage>

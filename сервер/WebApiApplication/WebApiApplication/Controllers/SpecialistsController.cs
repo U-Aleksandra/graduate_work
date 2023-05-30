@@ -52,13 +52,14 @@ namespace WebApiApplication.Controllers
 
         // GET api/<ValuesController>/5
         [HttpGet]
-        public Array Get()
+        public async Task<IActionResult> GetSpecialist()
         {
-            /*IEnumerable<User> users = _adp.Users.ToArray();
-            UsersList usersList = new UsersList(users);*/
-            Array users = _adp.Specialists.ToArray();
-
-            return users;
+            List<Specialist> listSpecialist = _adp.Specialists.ToList();
+            if (listSpecialist.Any())
+            {
+                return Ok(listSpecialist);
+            }
+            else return NoContent();
         }
 
         [HttpPut]

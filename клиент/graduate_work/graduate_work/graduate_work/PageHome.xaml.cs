@@ -1,7 +1,9 @@
-﻿using graduate_work.Models;
+﻿using graduate_work.Droid;
+using graduate_work.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http.Json;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -14,10 +16,16 @@ namespace graduate_work
 	public partial class PageHome : ContentPage
     {
         public User localUser;
-		public PageHome(User user)
+        private readonly string url = $"https://{apiConfig.url}:7113/api/Specialists";
+        List<Specialist> localListSpecialist;
+        public PageHome(User user)
 		{
             InitializeComponent();
             localUser = user;
+            var response = apiConfig.client.GetAsync(url).Result;
+            List<Specialist> listSpecialist = response.Content.ReadFromJsonAsync<List<Specialist>>().Result;
+            listViewSpecialist.ItemsSource = listSpecialist.Take(5);
+            localListSpecialist = listSpecialist;
         }
 
         private void ImageButtonNogti_Clicked(object sender, EventArgs e)
@@ -58,6 +66,11 @@ namespace graduate_work
         private void ImageButtonMassag_Clicked(object sender, EventArgs e)
         {
             Navigation.PushAsync(new PageServiceByCaterory(7, "Массаж", localUser));
+        }
+
+        private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new PageListSpecialist(localListSpecialist));
         }
     }
 }
