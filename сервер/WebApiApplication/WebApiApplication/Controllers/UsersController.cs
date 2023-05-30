@@ -164,7 +164,7 @@ namespace WebApiApplication.Controllers
             if(workSchedule.StartWork.ToString() != "00:00:00" && workSchedule.EndWork.ToString() != "00:00:00")
             {
                 listTimeWork.Add(new Tuple<TimeSpan, bool>(workSchedule.StartWork, true));
-                while (workSchedule.StartWork != workSchedule.EndWork)
+                while (workSchedule.StartWork < workSchedule.EndWork)
                 {
                     workSchedule.StartWork += intervalTime;
                     listTimeWork.Add(new Tuple<TimeSpan, bool>(workSchedule.StartWork, true));
@@ -175,7 +175,7 @@ namespace WebApiApplication.Controllers
             if (workSchedule.StartBreak.ToString() != "00:00:00" && workSchedule.EndBreak.ToString() != "00:00:00")
             {
                 listTimeBreak.Add(workSchedule.StartBreak);
-                while (workSchedule.StartBreak != workSchedule.EndBreak)
+                while (workSchedule.StartBreak < workSchedule.EndBreak)
                 {
                     workSchedule.StartBreak += intervalTime;
                     listTimeBreak.Add(workSchedule.StartBreak);
@@ -188,7 +188,7 @@ namespace WebApiApplication.Controllers
             foreach (var item in listAppointments)
             {
                 listBusyTime.Add(item.StartTime);
-                while (item.StartTime != item.EndTime)
+                while (item.StartTime < item.EndTime)
                 {
                     item.StartTime += intervalTime;
                     listBusyTime.Add(item.StartTime);
@@ -200,7 +200,7 @@ namespace WebApiApplication.Controllers
             if(fullTime.ToString() != "00:00:00")
             {
                 listServiceTime.Add(startTime);
-                while (startTime != fullTime)
+                while (startTime < fullTime)
                 {
                     startTime += intervalTime;
                     listServiceTime.Add(startTime);
@@ -245,15 +245,6 @@ namespace WebApiApplication.Controllers
             }
             if(specialist != null && user != null)
             {
-                /*appointments.Specialist = null;
-                appointments.User = null;
-                _adp.Appointments.Add(appointments);
-                appointments.Specialist = specialist;
-                appointments.User = user;
-                _adp.SaveChanges();
-                return Ok("Запись создана");*/
-                //var item = _adp.Appointments.FirstOrDefaultAsync(a => a.DateApointment == appointments.DateApointment &&
-                    //a.StartTime == appointments.StartTime && a.User.Id == appointments.User.Id);
                 if (await _adp.Appointments.FirstOrDefaultAsync(a => a.DateApointment == appointments.DateApointment &&
                     a.StartTime == appointments.StartTime && a.User.Id == appointments.User.Id) == null)
                 {
@@ -268,6 +259,17 @@ namespace WebApiApplication.Controllers
                 else return BadRequest("У пользователя уже есть запись на это время");
             }
             return BadRequest();
+        }
+
+        [HttpGet("GetAppointments")]
+        public async Task<IActionResult> GetAppointments(int idUser)
+        {
+            List<Appointments> listAppointments = _adp.Appointments.Where(a => a.User.Id == idUser).ToList();
+            if (listAppointments.Any())
+            {
+                return Ok(listAppointments);
+            }
+            else return NoContent();
         }
         // DELETE api/<ValuesController>/5
         [HttpDelete("{id}")]

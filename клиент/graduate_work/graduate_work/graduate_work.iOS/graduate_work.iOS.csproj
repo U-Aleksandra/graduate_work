@@ -183,4 +183,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\outline_calendar_month_white_24dp.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\outline_edit_calendar_white_24dp.png" />
+  </ItemGroup>
 </Project>

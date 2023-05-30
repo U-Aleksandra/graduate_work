@@ -152,5 +152,16 @@ namespace WebApiApplication.Controllers
             }
             else return NoContent();
         }
+
+        [HttpGet("GetAppointments")]
+        public async Task<IActionResult> GetAppointments(int idSpecialist)
+        {
+            List<Appointments> listAppointments = _adp.Appointments.Where(a => a.Specialist.Id == idSpecialist).ToList();
+            if (listAppointments.Any())
+            {
+                return Ok(listAppointments);
+            }
+            else return NoContent();
+        }
     }
 }

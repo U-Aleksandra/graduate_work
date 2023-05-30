@@ -30,7 +30,7 @@ namespace graduate_work
                     List<WorkSchedule> listWorkSchedule = response.Content.ReadFromJsonAsync<List<WorkSchedule>>().Result;
                     if (listWorkSchedule.Any())
                     {
-                        listViewWorkSchedule.ItemsSource = listWorkSchedule;
+                        listViewWorkSchedule.ItemsSource = listWorkSchedule.Where(l => l.Date >= DateTime.Today).OrderBy(l => l.Date);
                         BindingContext = this;
                     }
                 }
