@@ -4,10 +4,17 @@
              x:Class="graduate_work.PageListAppointments"
              IconImageSource="outline_edit_calendar_white_24dp.png"
              Title="Записи">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Удалить"
+                 Order="Primary"
+                 Priority="0" 
+                 Clicked="DeleteAppointment_Clicked"/>
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
             <ListView x:Name="listViewAppoinments"
-                      HasUnevenRows="True">
+                      HasUnevenRows="True"
+                      ItemSelected="listViewAppoinments_ItemSelected">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -26,6 +33,7 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
+            <Label x:Name="labelTest"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

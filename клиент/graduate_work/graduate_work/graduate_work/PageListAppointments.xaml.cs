@@ -3,6 +3,7 @@ using graduate_work.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Net.Http.Json;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,8 +18,12 @@ namespace graduate_work
     {
         private readonly string urlUser = $"https://{apiConfig.url}:7113/api/Users/GetAppointments";
         private readonly string urlSpecialist = $"https://{apiConfig.url}:7113/api/Specialists/GetAppointments";
+        private readonly string urlDelete = $"https://{apiConfig.url}:7113/api/Users/DeleteAppointment";
+        private int idAppointment;
+        private User localUser;
         public PageListAppointments(User user)
         {
+            localUser = user;
             InitializeComponent();
             if(user is Specialist specialist)
             {
@@ -40,7 +45,6 @@ namespace graduate_work
                     listViewAppoinments.ItemsSource = listAppointments.Where(l => l.DateApointment >= DateTime.Today).OrderBy(l => l.DateApointment);
                 }
             }
-
         }
 
         private List<SelectAppoinments> AppointmentsParse(List<Appointments> appointments)
@@ -61,6 +65,27 @@ namespace graduate_work
                 });
             }
             return selectAppointments;
+        }
+
+        private async void listViewAppoinments_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            SelectAppoinments itemAppoinments = e.SelectedItem as SelectAppoinments;
+            idAppointment = itemAppoinments.Id;
+        }
+
+        private async void DeleteAppointment_Clicked(object sender, EventArgs e)
+        {
+            if(idAppointment != 0)
+            {
+                var response = apiConfig.client.DeleteAsync(urlDelete + $"?idAppointments={idAppointment}").Result;
+                string result = await response.Content.ReadAsStringAsync();
+                if (response.StatusCode == HttpStatusCode.OK)
+                {
+                    await DisplayAlert("Результат", result, "Ok");
+                    await Navigation.PushModalAsync(new NavigationPage(new PageTabbed(localUser)));
+                }
+            }
+            else await DisplayAlert("Результат", "Выделите запись!", "Ok");
         }
     }
 }

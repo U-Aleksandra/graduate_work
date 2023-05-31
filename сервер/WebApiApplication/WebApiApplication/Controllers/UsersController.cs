@@ -34,14 +34,6 @@ namespace WebApiApplication.Controllers
             return users;
         }
 
-        // GET api/<ValuesController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
-        {
-
-            return _adp.Users.Find(id).Name;
-        }
-
         // POST api/<ValuesController>
         [HttpPost("Regist")]
         public async Task<IActionResult> PostRegist(User user)
@@ -272,12 +264,17 @@ namespace WebApiApplication.Controllers
             else return NoContent();
         }
         // DELETE api/<ValuesController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        [HttpDelete("DeleteAppointment")]
+        public async Task<IActionResult> DeleteAppointment(int idAppointments)
         {
-            User user = _adp.Users.Find(id);
-            _adp.Users.Remove(user);
-            _adp.SaveChanges();
+            Appointments? appointment = await _adp.Appointments.FirstOrDefaultAsync(a => a.Id == idAppointments);
+            if (appointment != null)
+            {
+                _adp.Appointments.Remove(appointment);
+                _adp.SaveChanges();
+                return Ok("Запись отменена");
+            }
+            else return NotFound();
         }
     }
 }
