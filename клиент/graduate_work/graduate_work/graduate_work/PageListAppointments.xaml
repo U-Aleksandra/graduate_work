@@ -16,6 +16,10 @@
                                     <Label Text="{Binding DateApointment, StringFormat='Дата: {0:dd-MM-yyyy}'}" FontSize="16" FontFamily = "Roboto" TextColor="#5147AC"/>
                                     <Label Text="{Binding StartTime, StringFormat='Начало: {0:}'}" FontSize="16" FontFamily = "Roboto" TextColor="#5147AC"/>
                                     <Label Text="{Binding EndTime, StringFormat='Конец: {0:}'}" FontSize="16" FontFamily = "Roboto" TextColor="#5147AC"/>
+                                    <Label Text="{Binding Address, StringFormat='Адрес: {0:}'}" FontSize="16" FontFamily = "Roboto" TextColor="#5147AC"/>
+                                    <Label Text="{Binding NameSpecialist, StringFormat='Специалист: {0:}'}" FontSize="16" FontFamily = "Roboto" TextColor="#5147AC"/>
+                                    <Label Text="{Binding NameUser, StringFormat='Клиент: {0:}'}" FontSize="16" FontFamily = "Roboto" TextColor="#5147AC"/>
+                                    <Label Text="{Binding Note, StringFormat='Комментарий: {0:}'}" FontSize="16" FontFamily = "Roboto" TextColor="#5147AC"/>
                                 </StackLayout>
                             </ViewCell.View>
                         </ViewCell>

@@ -264,7 +264,7 @@ namespace WebApiApplication.Controllers
         [HttpGet("GetAppointments")]
         public async Task<IActionResult> GetAppointments(int idUser)
         {
-            List<Appointments> listAppointments = _adp.Appointments.Where(a => a.User.Id == idUser).ToList();
+            List<Appointments> listAppointments = _adp.Appointments.Include(a => a.User).Include(a => a.Specialist).Where(a => a.User.Id == idUser).ToList();
             if (listAppointments.Any())
             {
                 return Ok(listAppointments);
