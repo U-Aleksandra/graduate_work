@@ -14,13 +14,14 @@ namespace graduate_work
     public partial class PageServiceByName : ContentPage
     {
         private User localUser;
+        private List<SelectService> localListService;
         public PageServiceByName(List<Service> services, User user)
         {
             InitializeComponent();
             if (services.Any())
             {
                 localUser = user;
-                List<SelectService> localListService = ServicesParse(services);
+                localListService = ServicesParse(services);
                 listViewService.ItemsSource = localListService;
                 BindingContext = this;
             }
@@ -52,6 +53,11 @@ namespace graduate_work
                 });
             }
             return selectServices;
+        }
+
+        private void SortPrice_Clicked(object sender, EventArgs e)
+        {
+            listViewService.ItemsSource = localListService.OrderBy(l => l.Price);
         }
     }
 
