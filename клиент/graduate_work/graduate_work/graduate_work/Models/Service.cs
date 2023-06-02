@@ -16,8 +16,19 @@ namespace graduate_work.Models
         public NameService NameService { get; set; } = null;
         public Specialist Specialist { get; set; } = null;
 
+        [System.Text.Json.Serialization.JsonConstructor]
         public Service(string descriptionService, decimal price, bool startPrice, TimeSpan servicesTime, TimeSpan breakTime)
         {
+            DescriptionService = descriptionService;
+            Price = price;
+            StartPrice = startPrice;
+            ServicesTime = servicesTime;
+            BreakTime = breakTime;
+        }
+
+        public Service(int id,string descriptionService, decimal price, bool startPrice, TimeSpan servicesTime, TimeSpan breakTime)
+        {
+            Id = id;
             DescriptionService = descriptionService;
             Price = price;
             StartPrice = startPrice;

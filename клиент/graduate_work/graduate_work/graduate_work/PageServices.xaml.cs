@@ -30,16 +30,42 @@ namespace graduate_work
                     List<Service> listServices = response.Content.ReadFromJsonAsync<List<Service>>().Result;
                     if (listServices.Any())
                     {
-                        listViewService.ItemsSource = listServices.Select(s => new { s.NameService.nameService, s.Price, s.StartPrice, s.ServicesTime, s.DescriptionService });
+                        listViewService.ItemsSource = ServicesParse(listServices);
                         BindingContext = this;
                     }
                 }
             }
         }
 
+        private List<SelectService> ServicesParse(List<Service> services)
+        {
+            List<SelectService> selectServices = new List<SelectService>();
+            foreach (var service in services)
+            {
+                selectServices.Add(new SelectService()
+                {
+                    Id = service.Id,
+                    nameService = service.NameService.nameService,
+                    Price = service.Price,
+                    StartPrice = service.StartPrice,
+                    ServicesTime = service.ServicesTime,
+                    BreakTime = service.BreakTime,
+                    DescriptionService = service.DescriptionService
+
+                });
+            }
+            return selectServices;
+        }
+
         private async void createServise_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new PageCreateServise(localUser));
+        }
+
+        private async void listViewService_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            SelectService service = e.SelectedItem as SelectService;
+            await Navigation.PushAsync(new PageEditService(service, localUser));
         }
     }
 }

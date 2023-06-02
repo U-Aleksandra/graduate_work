@@ -13,7 +13,8 @@
     <ContentPage.Content>
         <StackLayout>
             <ListView x:Name="listViewService"
-                      HasUnevenRows="True">
+                      HasUnevenRows="True"
+                      ItemSelected="listViewService_ItemSelected">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -31,6 +32,7 @@
                                         <Label Text="{Binding Price}" FontSize="16" FontFamily = "Roboto" TextColor="#5147AC"/>
                                     </StackLayout>
                                     <Label Text="{Binding ServicesTime}" FontSize="16" FontFamily = "Roboto" TextColor="#5147AC"/>
+                                    <Label Text="{Binding BreakTime}" FontSize="16" FontFamily = "Roboto" TextColor="#5147AC"/>
                                     <Label Text="{Binding DescriptionService}" FontSize="16" FontFamily = "Roboto" TextColor="#5147AC"/>
                                 </StackLayout>
                             </ViewCell.View>

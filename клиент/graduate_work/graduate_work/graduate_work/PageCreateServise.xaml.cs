@@ -25,9 +25,11 @@ namespace graduate_work
         bool _isValidServise;
         bool _isValidPrice;
         bool _isValidTimeService;
+        User localUser;
         public PageCreateServise(User user)
         {
             InitializeComponent();
+            localUser = user;
             if(user is Specialist specialist)
             {
                 localSpecialist = specialist;
@@ -75,10 +77,6 @@ namespace graduate_work
             {
                 decimal price;
                 Decimal.TryParse(entryPrice.Text, out price);
-                /*TimeSpan timeService;
-                TimeSpan.TryParse(timePickerService.Time.ToString(), out timeService);
-                TimeSpan timeBreak;
-                TimeSpan.TryParse(timePickerBreak.Time.ToString(), out timeBreak);*/
                 NameService nameService = listNameServices.FirstOrDefault(l => l.nameService == pickerService.Items[pickerService.SelectedIndex]);
 
                 JsonContent content = JsonContent.Create(new Service(entryNameServise.Text, price, checkBoxPrice.IsChecked, timePickerService.Time, timePickerBreak.Time)
@@ -92,7 +90,7 @@ namespace graduate_work
                 if (response.StatusCode == HttpStatusCode.OK)
                 {
                     await DisplayAlert("Результат", result, "Ok");
-                    await Navigation.PopAsync();
+                    await Navigation.PushModalAsync(new NavigationPage(new PageTabbed(localUser)));
                 }
                 else
                     await DisplayAlert("Результат", result, "Ok");

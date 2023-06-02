@@ -35,6 +35,8 @@ namespace graduate_work.Models
             Description = description;
             Services = new List<Service>();
         }
+
+        
     }
 
     

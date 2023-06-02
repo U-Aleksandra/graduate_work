@@ -165,5 +165,23 @@ namespace WebApiApplication.Controllers
             }
             else return NoContent();
         }
+
+
+        [HttpPut("PutService")]
+        public async Task<IActionResult> PutService(Service service)
+        {
+            Service? serviceOld = _adp.Services.FirstOrDefault(s => s.Id == service.Id);
+            if(serviceOld != null)
+            {
+                serviceOld.DescriptionService = service.DescriptionService;
+                serviceOld.Price = service.Price;
+                serviceOld.StartPrice = service.StartPrice;
+                serviceOld.ServicesTime = service.ServicesTime;
+                serviceOld.BreakTime = service.BreakTime;
+                _adp.SaveChanges();
+                return Ok("Изменения сохранены");
+            }
+            else return NotFound();
+        }
     }
 }

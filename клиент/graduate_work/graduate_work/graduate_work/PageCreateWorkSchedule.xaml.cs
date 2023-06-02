@@ -20,11 +20,13 @@ namespace graduate_work
     {
         private readonly string urlCreateWorkSchedule = $"https://{apiConfig.url}:7113/api/Specialists/CreateWorkSchedule";
         Specialist localSpecialist;
+        User localUser;
         bool _isValidDate;
         bool _isValidWork;
         bool _isValidBreak;
         public PageCreateWorkSchedule(User user)
         {
+            localUser = user;
             InitializeComponent();
             if(user is Specialist specialist) 
             { 
@@ -80,7 +82,7 @@ namespace graduate_work
                 if (response.StatusCode == HttpStatusCode.OK)
                 {
                     await DisplayAlert("Результат", result, "Ok");
-                    await Navigation.PopAsync();
+                    await Navigation.PushModalAsync(new Xamarin.Forms.NavigationPage(new PageTabbed(localUser)));
                 }
                 else
                     await DisplayAlert("Результат", result, "Ok");
