@@ -15,7 +15,7 @@ namespace graduate_work
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PageWorkDays : ContentPage
-    {
+    { 
         private readonly string urlWorkDays = $"https://{apiConfig.url}:7113/api/Users/GetWorkDays";
         private readonly string urlFreeTime = $"https://{apiConfig.url}:7113/api/Users/GetOfFreeTime";
         private SelectService localSelectService;

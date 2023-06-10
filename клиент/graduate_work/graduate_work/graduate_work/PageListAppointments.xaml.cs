@@ -61,7 +61,9 @@ namespace graduate_work
                     Note = appointment.Note,
                     NameSpecialist = appointment.Specialist.Name,
                     NameUser = appointment.User.Name,
-                    Address = appointment.Specialist.Address
+                    Address = appointment.Specialist.Address,
+                    UserPhone = appointment.User.Phone,
+                    SpecialistPhone = appointment.Specialist.Phone
                 });
             }
             return selectAppointments;

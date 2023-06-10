@@ -29,5 +29,14 @@ namespace WebApiApplication.Models
             ServicesTime = servicesTime;
             BreakTime = breakTime;
         }
+        public Service(int id, string descriptionService, decimal price, bool startPrice, TimeSpan servicesTime, TimeSpan breakTime)
+        {
+            Id = id;
+            DescriptionService = descriptionService;
+            Price = price;
+            StartPrice = startPrice;
+            ServicesTime = servicesTime;
+            BreakTime = breakTime;
+        }
     }
 }

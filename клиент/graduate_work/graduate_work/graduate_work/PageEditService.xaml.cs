@@ -31,8 +31,8 @@ namespace graduate_work
             checkBoxPrice.IsChecked = selectService.StartPrice;
             timePickerService.Time = selectService.ServicesTime;
             timePickerBreak.Time = selectService.BreakTime;
-            service = new Service(selectService.Id,selectService.DescriptionService, selectService.Price, selectService.StartPrice,
-                selectService.ServicesTime, selectService.BreakTime);
+            /*service = new Service(selectService.Id, selectService.DescriptionService, selectService.Price, selectService.StartPrice,
+              selectService.ServicesTime, selectService.BreakTime);*/
         }
 
         private async void SaveService_Clicked(object sender, EventArgs e)

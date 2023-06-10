@@ -23,16 +23,6 @@ namespace WebApiApplication.Controllers
         {
             _adp = adp;
         }
-        // GET: api/<ValuesController>
-        [HttpGet]
-        public Array Get()
-        {
-            /*IEnumerable<User> users = _adp.Users.ToArray();
-            UsersList usersList = new UsersList(users);*/
-            Array users = _adp.Users.ToArray();
-
-            return users;
-        }
 
         // POST api/<ValuesController>
         [HttpPost("Regist")]
@@ -142,16 +132,17 @@ namespace WebApiApplication.Controllers
         }
 
         [HttpGet("GetOfFreeTime")]
-        public async Task<IActionResult> GetOfFreeTime(DateTime dateWork, int idSpecialist, TimeSpan serviceTime, TimeSpan serviceBreak)
+        public async Task<IActionResult> GetOfFreeTime(string dateWork, int idSpecialist, TimeSpan serviceTime, TimeSpan serviceBreak)
         {
             TimeSpan intervalTime = new(0, 0, 5, 0, 0);
             TimeSpan fullTime = serviceTime + serviceBreak;
+            DateTime date = DateTime.Parse(dateWork);
             List<TimeSpan> listTimeBreak = new();
             List<Tuple<TimeSpan, bool>> listTimeWork = new();
             List<TimeSpan> listServiceTime = new();
             List<TimeSpan> listFreeTime = new();
 
-            WorkSchedule? workSchedule = await _adp.WorkSchedules.FirstOrDefaultAsync(w => w.Date == dateWork && w.Specialist.Id == idSpecialist);
+            WorkSchedule? workSchedule = await _adp.WorkSchedules.FirstOrDefaultAsync(w => w.Date == date && w.Specialist.Id == idSpecialist);
             //разбиение рабочего графика на промежутки
             if(workSchedule.StartWork.ToString() != "00:00:00" && workSchedule.EndWork.ToString() != "00:00:00")
             {
@@ -175,7 +166,7 @@ namespace WebApiApplication.Controllers
                 listTimeBreak.RemoveAt(listTimeBreak.Count - 1);
             }
             //разбиение занятых окошек на промежутки
-            List<Appointments> listAppointments = _adp.Appointments.Where(a => a.DateApointment == dateWork && a.Specialist.Id == idSpecialist).ToList();
+            List<Appointments> listAppointments = _adp.Appointments.Where(a => a.DateApointment == date && a.Specialist.Id == idSpecialist).ToList();
             List<TimeSpan> listBusyTime = new();
             foreach (var item in listAppointments)
             {

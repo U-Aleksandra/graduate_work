@@ -5,6 +5,7 @@ using System.Text.Json.Serialization;
 
 namespace graduate_work.Models
 {
+    [Serializable]
     public class Service
     {
         public int Id { get; set; }
@@ -25,8 +26,7 @@ namespace graduate_work.Models
             ServicesTime = servicesTime;
             BreakTime = breakTime;
         }
-
-        public Service(int id,string descriptionService, decimal price, bool startPrice, TimeSpan servicesTime, TimeSpan breakTime)
+        /*public Service(int id, string descriptionService, decimal price, bool startPrice, TimeSpan servicesTime, TimeSpan breakTime)
         {
             Id = id;
             DescriptionService = descriptionService;
@@ -34,6 +34,6 @@ namespace graduate_work.Models
             StartPrice = startPrice;
             ServicesTime = servicesTime;
             BreakTime = breakTime;
-        }
+        }*/
     }
 }

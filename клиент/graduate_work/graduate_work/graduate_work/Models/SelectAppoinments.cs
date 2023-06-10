@@ -14,5 +14,7 @@ namespace graduate_work.Models
         public string NameSpecialist { get; set; }
         public string NameUser { get; set; }
         public string Address { get; set; }
+        public string UserPhone { get; set; }
+        public string SpecialistPhone { get; set; }
     }
 }
